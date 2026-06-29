@@ -18,6 +18,7 @@ steps:
       - '-t'
       - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_AGENT_NAME}:latest'
       - '.'
+    dir: '02-geap-agent-runtime'
 
   # Push to Artifact Registry (both tags)
   - name: 'gcr.io/cloud-builders/docker'
