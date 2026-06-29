@@ -31,7 +31,7 @@ const explorerProfile = defineAgentProfile({
 
 export default defineAgent(() => ({
 	profile: explorerProfile,
-	model: 'anthropic/claude-sonnet-4-6',
+	model: process.env.FLUE_MODEL ?? 'google/gemini-3.1-flash-lite',
 	tools: [calculator],
 	sandbox: local(),
 }));

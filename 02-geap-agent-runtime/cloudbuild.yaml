@@ -41,7 +41,9 @@ steps:
               "containerSpec": {
                 "imageUri": "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_AGENT_NAME}:'"$SHORT_SHA"'",
                 "env": [
-                  {"name": "ANTHROPIC_API_KEY", "value": "${_ANTHROPIC_API_KEY}"},
+                  {"name": "GOOGLE_CLOUD_PROJECT", "value": "$PROJECT_ID"},
+                  {"name": "GOOGLE_CLOUD_LOCATION", "value": "${_REGION}"},
+                  {"name": "FLUE_MODEL", "value": "google/gemini-3.1-flash-lite"},
                   {"name": "PORT", "value": "8080"},
                   {"name": "NODE_ENV", "value": "production"}
                 ]
@@ -56,9 +58,8 @@ images:
 
 substitutions:
   _REGION: us-central1
-  _REPO: flue-agents
-  _AGENT_NAME: flue-explorer
-  _ANTHROPIC_API_KEY: ''
+  _REPO: cloud-run-source-deploy
+  _AGENT_NAME: flue-explorer-geap
 
 options:
   logging: CLOUD_LOGGING_ONLY
