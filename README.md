@@ -77,10 +77,26 @@ All agents use **Gemini 3.1 Flash Lite** via Vertex AI — configurable via `FLU
 - [ ] **AgentMsg channel** — add store-and-forward messaging for agents behind NAT (already prototyped on the [Flue fork](https://github.com/zeroasterisk/flue))
 - [ ] **ARD integration** — self-publish agent via [ai-catalog](https://github.com/Agent-Card/ai-catalog) for federated discovery
 
+### GEAP Integration Priorities
+
+| Priority | Integration | Status |
+|---|---|---|
+| **P1** | Observability → Cloud Trace / GEAP | 🔬 Not started |
+| **P1** | Evals → wire into GEAP | 🔬 Not started |
+| **P1** | Identity / Registry / Gateway → GEAP governance | 🔬 Not started |
+| **P2** | Discord channel (Flue built-in) | 🔬 Not started |
+| **P2** | Google Chat channel | 🔬 Not started |
+| **P3** | Developer UI (Flue playground, CopilotKit, or ADK web) | 🔬 Not started |
+
 ### Longer-term
-- [ ] **GEAP governance integration** — Agent Gateway (policy enforcement), Agent Registry (centralized catalog), Agent Identity (SPIFFE)
 - [ ] **Submit GEAP sandbox to [2027.dev](https://2027.dev/arena/sandboxes)** — benchmark agent-friendliness against E2B, Daytona, Modal, Cloudflare
 - [ ] **Upstream contributions** — A2A channel and GEAP sandbox adapter as PRs to [withastro/flue](https://github.com/withastro/flue)
+
+## Key Constraints Discovered
+
+- **GEAP Agent Runtime only supports Python** — deploying a TypeScript/Node.js container as a BYOC Reasoning Engine fails because Agent Runtime expects Python-based agents. The BYOC sandbox (Exploration 04) may be more flexible.
+- **GEAP env var restrictions** — `GOOGLE_CLOUD_PROJECT`, `PORT`, and other vars are reserved and auto-injected by the platform
+- **Flue requires Node.js 22+** — some sandbox environments have older Node.js versions
 
 ## Prerequisites
 
