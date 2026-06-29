@@ -1,13 +1,20 @@
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/flue-explorer', '.']
+    args:
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/flue-explorer:$SHORT_SHA'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/flue-explorer:latest'
+      - '.'
+    dir: '01-cloud-run'
 
-  # Push the container image to Container Registry
+  # Push to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/flue-explorer']
+    args: ['push', '--all-tags', 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/flue-explorer']
 
-  # Deploy container image to Cloud Run
+  # Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
@@ -15,22 +22,20 @@ steps:
       - 'deploy'
       - 'flue-explorer'
       - '--image'
-      - 'gcr.io/$PROJECT_ID/flue-explorer'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/flue-explorer:$SHORT_SHA'
       - '--region'
-      - '${_REGION}'
+      - 'us-central1'
       - '--platform'
       - 'managed'
       - '--allow-unauthenticated'
       - '--set-env-vars'
-      - 'ANTHROPIC_API_KEY=${_ANTHROPIC_API_KEY}'
+      - 'GOOGLE_CLOUD_PROJECT=$PROJECT_ID,GOOGLE_CLOUD_LOCATION=us-central1,FLUE_MODEL=google/gemini-3.1-flash-lite'
       - '--memory'
       - '512Mi'
       - '--timeout'
       - '300'
+      - '--port'
+      - '8080'
 
-images:
-  - 'gcr.io/$PROJECT_ID/flue-explorer'
-
-substitutions:
-  _REGION: us-central1
-  _ANTHROPIC_API_KEY: ''
+options:
+  logging: CLOUD_LOGGING_ONLY
