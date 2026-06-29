@@ -1,0 +1,64 @@
+# Cloud Build config for GEAP Agent Runtime deployment.
+#
+# Builds the container image and pushes to Artifact Registry.
+# Agent deployment is handled separately via deploy.sh or the REST API.
+#
+# Usage:
+#   gcloud builds submit \
+#     --config cloudbuild.yaml \
+#     --substitutions _REGION=us-central1,_REPO=flue-agents,_AGENT_NAME=flue-explorer
+
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_AGENT_NAME}:$SHORT_SHA'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_AGENT_NAME}:latest'
+      - '.'
+
+  # Push to Artifact Registry (both tags)
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - '--all-tags'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_AGENT_NAME}'
+
+  # Deploy to GEAP Agent Runtime via REST API
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        curl -s -X POST \
+          -H "Authorization: Bearer $$(gcloud auth print-access-token)" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "displayName": "${_AGENT_NAME}",
+            "spec": {
+              "containerSpec": {
+                "imageUri": "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_AGENT_NAME}:'"$SHORT_SHA"'",
+                "env": [
+                  {"name": "ANTHROPIC_API_KEY", "value": "${_ANTHROPIC_API_KEY}"},
+                  {"name": "PORT", "value": "8080"},
+                  {"name": "NODE_ENV", "value": "production"}
+                ]
+              }
+            }
+          }' \
+          "https://${_REGION}-aiplatform.googleapis.com/v1/projects/$PROJECT_ID/locations/${_REGION}/reasoningEngines"
+
+images:
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_AGENT_NAME}:$SHORT_SHA'
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_AGENT_NAME}:latest'
+
+substitutions:
+  _REGION: us-central1
+  _REPO: flue-agents
+  _AGENT_NAME: flue-explorer
+  _ANTHROPIC_API_KEY: ''
+
+options:
+  logging: CLOUD_LOGGING_ONLY
