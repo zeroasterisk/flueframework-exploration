@@ -1,6 +1,7 @@
 import { defineAgent, defineAgentProfile, defineTool } from '@flue/runtime';
 import { local } from '@flue/runtime/node';
 import * as v from 'valibot';
+import type { MiddlewareHandler } from 'hono';
 
 const calculator = defineTool({
 	name: 'calculator',
@@ -29,9 +30,18 @@ const explorerProfile = defineAgentProfile({
 	].join('\n'),
 });
 
+/**
+ * Export a route middleware to opt the agent into HTTP transport.
+ * Without this, the Flue runtime does not expose POST /agents/explorer/:id
+ * in production builds (temporaryLocalExposure is false).
+ */
+export const route: MiddlewareHandler = async (_c, next) => {
+	await next();
+};
+
 export default defineAgent(() => ({
 	profile: explorerProfile,
-	model: process.env.FLUE_MODEL ?? 'google/gemini-3.1-flash-lite',
+	model: process.env['FLUE_MODEL'] ?? 'google/gemini-3.1-flash-lite',
 	tools: [calculator],
 	sandbox: local(),
 }));
