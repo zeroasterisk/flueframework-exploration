@@ -1,0 +1,14 @@
+{
+	"name": "flue-geap-sandbox-script",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"demo": "tsx src/demo.ts",
+		"check:types": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/node": "^26.0.1",
+		"tsx": "^4.19.0",
+		"typescript": "^5.8.0"
+	}
+}
