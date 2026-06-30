@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flue-explorer
+  labels:
+    app: flue-explorer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flue-explorer
+  template:
+    metadata:
+      labels:
+        app: flue-explorer
+    spec:
+      serviceAccountName: flue-explorer-sa
+      containers:
+        - name: flue-explorer
+          image: IMAGE_PLACEHOLDER  # Replaced by deploy.sh
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: flue-explorer-config
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5

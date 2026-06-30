@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flue-explorer
+  labels:
+    app: flue-explorer
+spec:
+  type: LoadBalancer
+  selector:
+    app: flue-explorer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

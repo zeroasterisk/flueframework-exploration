@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flue-explorer-config
+  labels:
+    app: flue-explorer
+data:
+  GOOGLE_CLOUD_PROJECT: ""   # Set via deploy.sh or kustomize
+  FLUE_MODEL: "gemini-3.1-flash-lite"
+  PORT: "8080"
+  NODE_ENV: "production"
