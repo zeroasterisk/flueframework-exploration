@@ -7,7 +7,7 @@
 | # | Exploration | What | Status | Notes |
 |---|---|---|---|---|
 | 1 | [Cloud Run](01-cloud-run/) | Flue agent as BYOC container on Cloud Run | ✅ **Deployed & serving** | Health check passing, Gemini 3.1 Flash Lite |
-| 2 | [GEAP Agent Runtime](02-geap-agent-runtime/) | Flue agent as BYOC on GEAP Agent Runtime | 🔬 **Working on GEAP BYOC** | Deploy path identified (sourceCodeSpec + imageSpec); optimizing container startup |
+| 2 | [GEAP Agent Runtime](02-geap-agent-runtime/) | Flue agent as BYOC on GEAP Agent Runtime | ✅ **Deployed & serving** | Queries working (hello + calculator), Gemini 3.1 Flash Lite |
 | 3 | [GEAP Sandbox (script)](03-geap-sandbox-script/) | Code Execution sandbox — Python/JS only, no shell | ✅ **E2E verified** | Executed code via REST API, confirmed output format |
 | 4 | [GEAP Sandbox (BYOC)](04-geap-sandbox-byoc/) | Managed Agents sandbox — full bash, custom container | 🔬 **Prototype** | Client code written, needs deployment testing |
 | 5 | [A2A Channel](05-a2a-channel/) | A2A protocol adapter making Flue agents discoverable | 🔬 **Prototype** | Agent Card, message:send, task lifecycle |
