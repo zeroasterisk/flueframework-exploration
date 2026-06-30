@@ -4,10 +4,8 @@
   "type": "module",
   "dependencies": {
     "@google/adk": "^0.2.0",
-    "zod": "^3.24.0"
-  },
-  "devDependencies": {
     "@google/adk-devtools": "^0.2.0",
+    "zod": "^3.24.0",
     "typescript": "^5.8.0"
   }
 }

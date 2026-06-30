@@ -1,10 +1,9 @@
-FROM node:lts-alpine
+FROM node:22-alpine
 WORKDIR /app
 
-# Install deps as root first
+# Install deps as root
 COPY package.json /app/package.json
-RUN npm install --production
-RUN npm install @google/adk-devtools@latest
+RUN npm install
 
 # Copy agent source
 COPY agents/ /app/agents/
@@ -13,9 +12,9 @@ COPY agents/ /app/agents/
 RUN adduser --disabled-password --gecos "" myuser && chown -R myuser:myuser /app
 USER myuser
 
-ENV PATH="/home/myuser/.local/bin:$PATH"
 ENV GOOGLE_GENAI_USE_VERTEXAI=1
 
 EXPOSE 8080
 
+# Use npx to run the adk api_server with the agent directory
 CMD ["npx", "adk", "api_server", "/app/agents/explorer", "--port=8080", "--host=0.0.0.0"]
