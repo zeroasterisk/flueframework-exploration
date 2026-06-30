@@ -1,33 +1,18 @@
-# ── Build stage ───────────────────────────────────────────────────────────────
-FROM node:22-alpine AS build
-
-WORKDIR /app
-COPY package.json ./
-
-# Use npm to avoid pnpm supply-chain policy issues with beta packages
-RUN npm install --ignore-scripts 2>/dev/null; npm install
-
-COPY . .
-RUN npx flue build 2>/dev/null || echo "flue build skipped"
-
-# ── Runtime stage ─────────────────────────────────────────────────────────────
-FROM node:22-alpine
-
-RUN apk add --no-cache tini curl
-
+FROM node:lts-alpine
 WORKDIR /app
 
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/package.json ./
-COPY --from=build /app/src ./src
-COPY --from=build /app/flue.config.ts ./
+RUN adduser --disabled-password --gecos "" myuser
+USER myuser
 
-ENV PORT=8080
+ENV PATH="/home/myuser/.local/bin:$PATH"
+ENV GOOGLE_GENAI_USE_VERTEXAI=1
+
+COPY --chown=myuser:myuser agents/ /app/agents/
+COPY --chown=myuser:myuser package.json /app/package.json
+
+RUN npm install @google/adk-devtools@latest
+RUN npm install --production
+
 EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:8080/health || exit 1
-
-ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["node", "dist/server.mjs"]
+CMD npx adk api_server /app/agents/explorer --port=8080 --host=0.0.0.0
