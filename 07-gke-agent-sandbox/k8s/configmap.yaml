@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flue-sandbox-config
+  namespace: default
+  labels:
+    app: flue-agent-sandbox
+data:
+  GOOGLE_CLOUD_PROJECT: ""       # Set via deploy.sh
+  FLUE_MODEL: "gemini-3.1-flash-lite"
+  PORT: "8080"
+  NODE_ENV: "production"
+  # Sandbox-specific configuration
+  SANDBOX_MODE: "gke-agent-sandbox"
+  EXECUTION_TIMEOUT_MS: "30000"  # Max execution time per request
+  MAX_OUTPUT_BYTES: "1048576"    # 1MB max output per execution

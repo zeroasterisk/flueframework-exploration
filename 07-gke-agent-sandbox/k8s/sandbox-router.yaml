@@ -1,0 +1,81 @@
+# Sandbox Router: stable endpoint that routes traffic to sandbox pods.
+#
+# The router is a lightweight async reverse proxy that provides scalable
+# access to sandbox pods. It reads the X-Sandbox-ID header from incoming
+# requests and routes to the correct sandbox pod's internal IP.
+#
+# Traffic flow:
+#   Client -> sandbox-router Service -> Router Pod -> Sandbox Pod
+#
+# In development, use kubectl port-forward to reach the router:
+#   kubectl port-forward svc/sandbox-router-svc 8080:8080
+#
+# In production, front the router with a Gateway/Ingress for external access.
+#
+# Ref: https://github.com/kubernetes-sigs/agent-sandbox
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: sandbox-router-svc
+  namespace: default
+  labels:
+    app: sandbox-router
+spec:
+  type: ClusterIP
+  selector:
+    app: sandbox-router
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sandbox-router
+  namespace: default
+  labels:
+    app: sandbox-router
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sandbox-router
+  template:
+    metadata:
+      labels:
+        app: sandbox-router
+    spec:
+      containers:
+        - name: sandbox-router
+          image: us-central1-docker.pkg.dev/k8s-staging-images/agent-sandbox/sandbox-router:latest
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: sandbox-router

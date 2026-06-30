@@ -1,0 +1,26 @@
+# SandboxClaim: request a sandbox from the warm pool.
+#
+# Works like PersistentVolumeClaim for compute — the controller finds an
+# available pre-warmed pod from the SandboxWarmPool and transfers ownership
+# to this claim. If the pool is empty, a new pod is created from the
+# SandboxTemplate.
+#
+# The claim results in a Sandbox resource with a stable identity (hostname,
+# network endpoint) that persists for the lifetime of the claim.
+#
+# To verify claim status:
+#   kubectl get sandboxclaim flue-agent-claim -o yaml
+#   # Check .status.phase — should be "Bound" when a sandbox is allocated
+#
+# Ref: https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox
+
+apiVersion: extensions.agents.x-k8s.io/v1alpha1
+kind: SandboxClaim
+metadata:
+  name: flue-agent-claim
+  namespace: default
+  labels:
+    app: flue-agent-sandbox
+spec:
+  sandboxTemplateRef:
+    name: flue-agent-template

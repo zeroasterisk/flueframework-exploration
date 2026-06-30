@@ -1,0 +1,95 @@
+# SandboxTemplate: reusable blueprint for Flue agent sandboxes.
+#
+# The Agent Sandbox controller uses this template to create consistent,
+# pre-configured sandbox environments. Combined with a SandboxWarmPool,
+# new sandboxes provision in under one second.
+#
+# Security requirements (enforced by GKE Validating Admission Policy):
+#   - runtimeClassName: gvisor
+#   - automountServiceAccountToken: false
+#   - runAsNonRoot: true
+#   - capabilities.drop: ["ALL"]
+#   - resource limits (CPU + memory)
+#   - nodeSelector targeting gVisor nodes
+#
+# Ref: https://docs.cloud.google.com/kubernetes-engine/docs/how-to/agent-sandbox
+
+apiVersion: extensions.agents.x-k8s.io/v1alpha1
+kind: SandboxTemplate
+metadata:
+  name: flue-agent-template
+  namespace: default
+  labels:
+    app: flue-agent-sandbox
+spec:
+  podTemplate:
+    metadata:
+      labels:
+        app: flue-agent-sandbox
+    spec:
+      runtimeClassName: gvisor
+      automountServiceAccountToken: false
+      nodeSelector:
+        sandbox.gke.io/runtime: gvisor
+      tolerations:
+        - key: sandbox.gke.io/runtime
+          operator: Equal
+          value: gvisor
+          effect: NoSchedule
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: flue-agent
+          image: IMAGE_PLACEHOLDER  # Replaced by deploy.sh
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: flue-sandbox-config
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1"
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false  # Agent needs to write temp files
+            capabilities:
+              drop:
+                - "ALL"
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 2
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+---
+# SandboxWarmPool: keep pre-warmed pods ready for sub-second provisioning.
+#
+# The controller maintains this many idle sandbox pods. When a SandboxClaim
+# arrives, ownership transfers from the pool to the claim in ~100ms instead
+# of waiting for a full pod startup cycle.
+
+apiVersion: extensions.agents.x-k8s.io/v1alpha1
+kind: SandboxWarmPool
+metadata:
+  name: flue-agent-pool
+  namespace: default
+  labels:
+    app: flue-agent-sandbox
+spec:
+  replicas: 2
+  sandboxTemplateRef:
+    name: flue-agent-template
