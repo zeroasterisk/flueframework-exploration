@@ -17,4 +17,4 @@ ENV GOOGLE_GENAI_USE_VERTEXAI=1
 EXPOSE 8080
 
 # Use npx to run the adk api_server with the agent directory
-CMD ["npx", "adk", "api_server", "/app/agents/explorer", "--port=8080", "--host=0.0.0.0"]
+CMD ["npx", "adk", "api_server", "/app/agents", "--port=8080", "--host=0.0.0.0"]
