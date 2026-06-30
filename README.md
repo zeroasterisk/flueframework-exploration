@@ -6,8 +6,8 @@
 
 | # | Exploration | What | Status | Notes |
 |---|---|---|---|---|
-| 1 | [Cloud Run](01-cloud-run/) | Flue agent as BYOC container on Cloud Run | ✅ **Deployed & serving** | Health check passing |
-| 2 | [GEAP Agent Runtime](02-geap-agent-runtime/) | Flue agent as BYOC on GEAP Agent Runtime | ⚠️ **Image built, deploy in progress** | Container image in Artifact Registry; Reasoning Engine created; investigating BYOC container binding API |
+| 1 | [Cloud Run](01-cloud-run/) | Flue agent as BYOC container on Cloud Run | ✅ **Deployed & serving** | Health check passing, Gemini 3.1 Flash Lite |
+| 2 | [GEAP Agent Runtime](02-geap-agent-runtime/) | Flue agent as BYOC on GEAP Agent Runtime | 🔬 **Working on GEAP BYOC** | Deploy path identified (sourceCodeSpec + imageSpec); optimizing container startup |
 | 3 | [GEAP Sandbox (script)](03-geap-sandbox-script/) | Code Execution sandbox — Python/JS only, no shell | ✅ **E2E verified** | Executed code via REST API, confirmed output format |
 | 4 | [GEAP Sandbox (BYOC)](04-geap-sandbox-byoc/) | Managed Agents sandbox — full bash, custom container | 🔬 **Prototype** | Client code written, needs deployment testing |
 | 5 | [A2A Channel](05-a2a-channel/) | A2A protocol adapter making Flue agents discoverable | 🔬 **Prototype** | Agent Card, message:send, task lifecycle |
@@ -92,10 +92,38 @@ All agents use **Gemini 3.1 Flash Lite** via Vertex AI — configurable via `FLU
 - [ ] **Submit GEAP sandbox to [2027.dev](https://2027.dev/arena/sandboxes)** — benchmark agent-friendliness against E2B, Daytona, Modal, Cloudflare
 - [ ] **Upstream contributions** — A2A channel and GEAP sandbox adapter as PRs to [withastro/flue](https://github.com/withastro/flue)
 
-## Key Constraints Discovered
+## GEAP BYOC Deployment Guide
 
-- **GEAP Agent Runtime only supports Python** — deploying a TypeScript/Node.js container as a BYOC Reasoning Engine fails because Agent Runtime expects Python-based agents. The BYOC sandbox (Exploration 04) may be more flexible.
+GEAP Agent Runtime supports BYOC containers deployed via `sourceCodeSpec` with `imageSpec`. Here's what we've learned:
+
+**How to deploy:**
+1. Package your `Dockerfile` + source files as a `.tar.gz`
+2. Base64-encode the archive
+3. POST to `/v1beta1/.../reasoningEngines` with `spec.sourceCodeSpec.inlineSource.sourceArchive` + `spec.sourceCodeSpec.imageSpec`
+4. GEAP builds the container internally via Cloud Build and deploys it
+
+**Container requirements:**
+- Listen on `PORT` env var (auto-injected, default 8080)
+- Respond to `POST /api/reasoning_engine` with JSON `{output: ...}`
+- Start within ~10 seconds (fast startup is critical)
+- Health checks via TCP probe on the configured port
+
+**Environment injected by GEAP:**
+- `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION` — GCP context
+- `GOOGLE_CLOUD_AGENT_ENGINE_ID` — the reasoning engine resource ID
+- `K_SERVICE`, `K_REVISION`, `K_CONFIGURATION` — Cloud Run internals
+- `PORT` — container port (do not override)
+- `CLOUD_RUN_TIMEOUT_SECONDS` — request timeout (900s)
+
+**Tips:**
+- Pre-install all dependencies in the Docker image (no `npm install` at runtime)
+- Use a lightweight HTTP server — the ADK `api_server` adds startup latency
+- `GOOGLE_CLOUD_PROJECT` and `PORT` are reserved env vars — don't set them in `deploymentSpec.env`
+
+## Key Constraints
+
 - **GEAP env var restrictions** — `GOOGLE_CLOUD_PROJECT`, `PORT`, and other vars are reserved and auto-injected by the platform
+- **Fast startup required** — containers must pass health checks within ~10 seconds
 - **Flue requires Node.js 22+** — some sandbox environments have older Node.js versions
 
 ## Prerequisites
