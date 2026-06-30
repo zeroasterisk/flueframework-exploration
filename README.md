@@ -12,7 +12,7 @@
 | 4 | [GEAP Sandbox (BYOC)](04-geap-sandbox-byoc/) | Managed Agents sandbox — full bash, custom container | 🔬 **Prototype** | Client code written, needs deployment testing |
 | 5 | [A2A Channel](05-a2a-channel/) | A2A protocol adapter making Flue agents discoverable | 🔬 **Prototype** | Agent Card, message:send, task lifecycle |
 | 6 | [GKE](06-gke/) | Deploy Flue agent to GKE | 🔬 **Prototype** | K8s manifests, deploy script, Workload Identity |
-| 7 | [GKE Agent Sandbox](07-gke-agent-sandbox/) | GKE Agent Sandbox with custom image | 🔬 **Building** | Kata Containers, SandboxTemplate/SandboxClaim CRDs |
+| 7 | [GKE Agent Sandbox](07-gke-agent-sandbox/) | GKE Agent Sandbox with custom image | 🔬 **Prototype** | Kata Containers, SandboxTemplate/SandboxClaim CRDs, sandbox executor |
 | 8 | [A2A Integration](08-a2a-integration/) | Single agent speaking GEAP + A2A | ✅ **Ready** | Agent Card + message:send + GEAP query in one container |
 
 ### Guides
