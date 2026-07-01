@@ -1,5 +1,42 @@
 # Video Production Plans — Flue Framework Exploration
 
+> **For agents:** Each video below is an independent work unit. Before starting one, read
+> "Repo Layout & Asset Provenance" and the video's brief (status, prerequisites, acceptance
+> criteria). Scene source code MUST be committed to this repo under `guides/video/scenes/<slug>/`
+> — do not leave source only in an OpenMontage workspace or scratch dir.
+
+## Video Pipeline Status
+
+| # | Video | Scene source in repo | Rendered | Delivered | Ready to start? |
+|---|---|---|---|---|---|
+| 1 | Flue Deployment Story (V2) | ⚠️ NOT in repo (see provenance) | ✅ 720p30 (GCS) | ✅ | Recovery task open |
+| 2 | Security Deep Dive | ⬜ | ⬜ | ⬜ | Yes — brief below |
+| 3 | Optimization Deep Dive | ⬜ | ⬜ | ⬜ | Yes — brief below |
+| 4 | A2A Protocol Explainer | ⬜ | ⬜ | ⬜ | Yes — brief below |
+| 5 | Per-Framework A2A Integration (series) | ⬜ | ⬜ | ⬜ | Blocked: needs each framework's Phase 2 results from [a2a-integration-factory](https://github.com/zeroasterisk/a2a-integration-factory) |
+
+## Repo Layout & Asset Provenance
+
+**⚠️ Known gap:** the Video 1 scene source (`projects/flue-deployment/flue_deployment.py`, 494
+lines) was written inside an OpenMontage workspace that is not part of this repo, and only the
+rendered MP4 was uploaded to GCS (`gs://alanblount-demo_cloudbuild/manim-output/FlueDeploymentV2-720p30.mp4`).
+**Recovery task:** locate that file (OpenMontage checkout or old sandbox) and commit it to
+`guides/video/scenes/flue-deployment/`; if unrecoverable, ask Alan before re-creating.
+
+**Rule going forward** — every video keeps all of its inputs in this repo:
+
+```
+guides/video/
+├── plans.md                      # this file — index, style guide, workflow
+└── scenes/
+    └── <video-slug>/
+        ├── <scene>.py            # ManimCE scene source (committed BEFORE rendering "done")
+        ├── STORYBOARD.md         # narrative, beats, timings, feedback log
+        └── README.md             # render commands, output locations (GCS links)
+```
+
+Rendered MP4s stay out of git (upload to GCS, link from the scene README).
+
 ## Tools & Setup
 
 ### Primary: OpenMontage + Manim
@@ -78,8 +115,8 @@ def make_node(label, color, width=2.2, height=0.65):
 
 ## Video 1: Flue Deployment Story (V2)
 
-### Status: Rendered ✅
-- Scene: `projects/flue-deployment/flue_deployment.py` (494 lines)
+### Status: Rendered ✅ — but scene source NOT committed ⚠️
+- Scene: `projects/flue-deployment/flue_deployment.py` (494 lines) — **path is inside an OpenMontage workspace, not this repo**; see "Repo Layout & Asset Provenance" for the recovery task
 - Output: `output/FlueDeploymentV2.mp4` (26.6s, 720p30, 742KB)
 - GCS: `gs://alanblount-demo_cloudbuild/manim-output/FlueDeploymentV2-720p30.mp4`
 
@@ -117,40 +154,44 @@ def make_node(label, color, width=2.2, height=0.65):
 
 ## Future Videos (Planned)
 
+> Each brief is self-contained for an agent to execute end-to-end via the Production Workflow
+> below. Shared acceptance criteria for ALL videos:
+> 1. Scene source + STORYBOARD.md + README.md committed under `guides/video/scenes/<slug>/`
+> 2. Follows the Visual Style Guide (palette, text hierarchy, arrows, `make_node`)
+> 3. Target ~30s, 5-chapter structure unless the storyboard argues otherwise
+> 4. Reviewed at low quality before production render; production render uploaded to GCS with
+>    link recorded in the scene README
+> 5. Status table at the top of this file updated
+
 ### Video 2: Security Deep Dive
-- Agent Identity (SPIFFE, X.509, mTLS)
-- Agent Gateway (policy enforcement, IAP)
-- Agent Registry (centralized catalog)
-- Semantic Governance (natural language policies)
-- Model Armor (content protection)
+- **Slug:** `security` | **Content source:** [`guides/security-and-governance.md`](../security-and-governance.md)
+- Expands the 2s placeholder chapter from Video 1; reuse its node/zoom-out visual language
+- Beats: Agent Identity (SPIFFE, X.509, mTLS) → Agent Gateway (policy enforcement, IAP) → Agent Registry (centralized catalog) → Semantic Governance (natural language policies) → Model Armor (content protection)
+- Palette anchor: `PURPLE_ACC` for security elements
 
 ### Video 3: Optimization Deep Dive
-- Defining success metrics
-- Instrumenting agent behavior (OpenTelemetry, Cloud Trace)
-- Evaluation scoring (Exgentic, PinchBench)
-- Simulation of scenarios
-- Continuous improvement loop
+- **Slug:** `optimization` | **Content source:** exploration READMEs + Exgentic/PinchBench results (a2a-integration-factory `frameworks/flue/STATUS.md`)
+- Expands the 2s placeholder chapter from Video 1
+- Beats: define success metrics → instrument (OpenTelemetry, Cloud Trace) → evaluate (Exgentic, PinchBench) → simulate scenarios → continuous improvement loop (circular arrow motif)
 
 ### Video 4: A2A Protocol Explainer
-- What is A2A (agents talking to agents)
-- Agent Cards (discovery)
-- Message lifecycle (send → working → completed)
-- Multi-framework interop (ADK + CrewAI + Flue via A2A)
-- AgentMsg relay for NAT traversal
+- **Slug:** `a2a-protocol` | **Content source:** [A2A spec](https://a2a-protocol.org/latest/specification/), [`guides/tutorial-add-a2a-to-flue.md`](../tutorial-add-a2a-to-flue.md), `05-a2a-channel/`
+- Beats: what is A2A → Agent Cards (discovery) → message lifecycle (send → working → completed) → multi-framework interop (ADK + CrewAI + Flue) → AgentMsg relay for NAT traversal
+- Palette anchor: `YELLOW_ACC` for A2A connections (consistent with Video 1)
 
-### Video 5: Per-Framework A2A Integration
-- For each framework in the A2A Integration Factory
-- Show: before (isolated) → after (connected via A2A)
-- Benchmark results from Exgentic
-- How to deploy on GEAP
+### Video 5: Per-Framework A2A Integration (series)
+- **Slug:** `a2a-<framework>` (one scene dir per framework)
+- **Blocked until** the framework's Phase 2 (Exgentic verification) completes in [a2a-integration-factory](https://github.com/zeroasterisk/a2a-integration-factory) — benchmark numbers are a required beat
+- Beats per framework: before (isolated agent) → after (connected via A2A) → Exgentic benchmark results → deploy on GEAP
+- Design once as a parameterized template scene (framework name, logo color, benchmark numbers) so per-framework production is fast; Flue is the pilot (Phase 2 done: 3/3, score 1.0)
 
 ## Production Workflow
 
-1. **Script** — write narrative + storyboard in this doc
-2. **Code** — write Manim scene (use OpenMontage skills for best practices)
+1. **Script** — write narrative + storyboard in `guides/video/scenes/<slug>/STORYBOARD.md`
+2. **Code** — write Manim scene in `guides/video/scenes/<slug>/` (use OpenMontage skills for best practices); **commit the source**
 3. **Render low-quality** — `manim -ql` for fast iteration
-4. **Review** — code review + visual review (use Gemini Flash for video analysis when possible)
+4. **Review** — code review + visual review (use Gemini Flash for video analysis when possible); log feedback in STORYBOARD.md
 5. **Iterate** — fix issues, re-render
 6. **Render production** — `manim -qh` or `-qk` for final
-7. **Upload** — GCS bucket, generate shareable link
-8. **Deliver** — send link via Telegram or embed in repo
+7. **Upload** — GCS bucket (`gs://alanblount-demo_cloudbuild/manim-output/`), record link in scene README
+8. **Deliver** — send link via Telegram or embed in repo; update the Video Pipeline Status table in this file

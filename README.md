@@ -19,6 +19,10 @@
 | Guide | Description |
 |---|---|
 | [Security & Governance](guides/security-and-governance.md) | Agent Gateway, Identity, Registry, policies across all deployment targets |
+| [Blog: Deploying Flue on GCP](guides/blog-deploying-flue-on-gcp.md) | Draft blog post covering the deployment explorations |
+| [Tutorial: Add A2A to Flue](guides/tutorial-add-a2a-to-flue.md) | Step-by-step A2A channel tutorial |
+| [Upstream PR Plan](guides/upstream-pr-plan.md) | Five planned upstream contributions (Flue, adk-docs, agentready) |
+| [Video Production Plans](guides/video/plans.md) | Style guide, storyboards, per-video briefs, production workflow |
 
 ## Overview
 
