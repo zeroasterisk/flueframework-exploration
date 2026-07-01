@@ -12,7 +12,7 @@
 | 1 | Flue Deployment Story (V2) | ⚠️ NOT in repo (see provenance) | ✅ 720p30 (GCS) | ✅ | Recovery task open |
 | 2 | Security Deep Dive | ⬜ | ⬜ | ⬜ | Yes — brief below |
 | 3 | Optimization Deep Dive | ⬜ | ⬜ | ⬜ | Yes — brief below |
-| 4 | A2A Protocol Explainer | ⬜ | ⬜ | ⬜ | Yes — brief below |
+| 4 | A2A Protocol Explainer | ✅ [`scenes/a2a-protocol/`](scenes/a2a-protocol/) | ✅ v1 1080p60 26.6s | 🔶 GCS upload pending auth | Iterate v2 (see scene README review notes) |
 | 5 | Per-Framework A2A Integration (series) | ⬜ | ⬜ | ⬜ | Blocked: needs each framework's Phase 2 results from [a2a-integration-factory](https://github.com/zeroasterisk/a2a-integration-factory) |
 
 ## Repo Layout & Asset Provenance

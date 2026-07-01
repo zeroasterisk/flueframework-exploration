@@ -1,1 +1,5 @@
 node_modules/
+
+# Manim render workspace (keep final renders in scenes/*/renders/)
+guides/video/scenes/*/media/
+__pycache__/
