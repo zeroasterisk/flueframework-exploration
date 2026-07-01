@@ -10,7 +10,7 @@
 | # | Video | Scene source in repo | Rendered | Delivered | Ready to start? |
 |---|---|---|---|---|---|
 | 1 | Flue Deployment Story (V2) | ✅ [`scenes/flue-deployment/`](scenes/flue-deployment/) (recovered 2026-07-01) | ✅ 720p30 (GCS) | ✅ | Done |
-| 2 | Security Deep Dive | ⬜ | ⬜ | ⬜ | Yes — brief below |
+| 2 | Security Deep Dive | ✅ [`scenes/security/`](scenes/security/) | ✅ v1 1080p60 30.6s | 🔶 GCS upload pending | v2: IAP arrow anchor, silo rings (see README) |
 | 3 | Optimization Deep Dive | ⬜ | ⬜ | ⬜ | Yes — brief below |
 | 4 | A2A Protocol Explainer | ✅ [`scenes/a2a-protocol/`](scenes/a2a-protocol/) | ✅ v1 1080p60 26.6s | 🔶 GCS upload pending auth | Iterate v2 (see scene README review notes) |
 | 5 | Per-Framework A2A Integration (series) | ⬜ | ⬜ | ⬜ | Blocked: needs each framework's Phase 2 results from [a2a-integration-factory](https://github.com/zeroasterisk/a2a-integration-factory) |
