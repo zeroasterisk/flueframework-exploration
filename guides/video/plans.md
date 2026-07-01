@@ -9,7 +9,7 @@
 
 | # | Video | Scene source in repo | Rendered | Delivered | Ready to start? |
 |---|---|---|---|---|---|
-| 1 | Flue Deployment Story (V2) | ⚠️ NOT in repo (see provenance) | ✅ 720p30 (GCS) | ✅ | Recovery task open |
+| 1 | Flue Deployment Story (V2) | ✅ [`scenes/flue-deployment/`](scenes/flue-deployment/) (recovered 2026-07-01) | ✅ 720p30 (GCS) | ✅ | Done |
 | 2 | Security Deep Dive | ⬜ | ⬜ | ⬜ | Yes — brief below |
 | 3 | Optimization Deep Dive | ⬜ | ⬜ | ⬜ | Yes — brief below |
 | 4 | A2A Protocol Explainer | ✅ [`scenes/a2a-protocol/`](scenes/a2a-protocol/) | ✅ v1 1080p60 26.6s | 🔶 GCS upload pending auth | Iterate v2 (see scene README review notes) |
@@ -17,11 +17,9 @@
 
 ## Repo Layout & Asset Provenance
 
-**⚠️ Known gap:** the Video 1 scene source (`projects/flue-deployment/flue_deployment.py`, 494
-lines) was written inside an OpenMontage workspace that is not part of this repo, and only the
-rendered MP4 was uploaded to GCS (`gs://alanblount-demo_cloudbuild/manim-output/FlueDeploymentV2-720p30.mp4`).
-**Recovery task:** locate that file (OpenMontage checkout or old sandbox) and commit it to
-`guides/video/scenes/flue-deployment/`; if unrecoverable, ask Alan before re-creating.
+**Resolved (2026-07-01):** the Video 1 scene source (`flue_deployment.py`, 494 lines) was
+recovered from the OpenMontage workspace and committed to `scenes/flue-deployment/`. The
+rendered MP4 remains at `gs://alanblount-demo_cloudbuild/manim-output/FlueDeploymentV2-720p30.mp4`.
 
 **Rule going forward** — every video keeps all of its inputs in this repo:
 
