@@ -1,0 +1,102 @@
+{
+  "preflight": {
+    "path": "/Users/alanblount/Workspaces/scratchpad/open-source/flueframework-exploration/guides/video/scenes/security/renders/SecurityDeepDive-1080p60.mp4",
+    "exists": true,
+    "size_mb": 1.8,
+    "extension": ".mp4",
+    "duration_s": 29.8,
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60.0
+  },
+  "pass1": {
+    "pass": 1,
+    "model": "gemini-3.1-flash-lite",
+    "dimensions": {
+      "visual_clarity": {
+        "score": 8,
+        "notes": "The node-based flow is logical and easy to follow. The transition from grey to purple effectively communicates the security hardening process."
+      },
+      "timing_pacing": {
+        "score": 7,
+        "notes": "The pacing is generally good, though the final reveal of the five-layer ring happens a bit abruptly at 0:23, leaving little time for the viewer to digest the full architecture before the video ends."
+      },
+      "color_discipline": {
+        "score": 9,
+        "notes": "Excellent adherence to the requested color palette. The distinction between the green agent and purple security layers is clear and reinforces the intended meaning."
+      },
+      "text_readability": {
+        "score": 6,
+        "notes": "The italicized grey text at the bottom (e.g., 'any caller - any outbound call - no audit trail') is quite small and low-contrast, making it difficult to read on smaller displays."
+      },
+      "transition_quality": {
+        "score": 7,
+        "notes": "The animations are smooth, but the 'Agent Gateway' text overlap at 0:11-0:12 feels slightly cluttered and unrefined compared to the rest of the motion."
+      },
+      "professional_polish": {
+        "score": 7,
+        "notes": "The production is clean and free of artifacts. However, the alignment of the text labels within the nodes is slightly inconsistent in some frames."
+      }
+    },
+    "average_score": 7.3,
+    "critical_issues": [
+      "The italicized footer text is too small and lacks sufficient contrast against the dark background, risking accessibility issues for the target audience."
+    ],
+    "suggestions": [
+      "Increase the font size and weight of the footer text to ensure readability.",
+      "Add a 1-2 second pause at the end of the final 'ring' animation to allow the viewer to fully process the completed security stack.",
+      "Refine the text alignment within the 'Agent Gateway' node to prevent the slight jitter observed during the transition."
+    ],
+    "standout_positives": [
+      "Strong, disciplined use of color to convey complex security concepts without needing excessive narration.",
+      "The 'zero security code written' payoff is effectively delivered with a calm, confident tone."
+    ],
+    "one_line_verdict": "A technically sound and visually coherent explainer that effectively communicates the value proposition, though it needs minor adjustments to text legibility and final pacing."
+  },
+  "pass2": {
+    "pass": 2,
+    "model": "gemini-3.5-flash",
+    "dimensions": {
+      "first_impression": {
+        "score": 8,
+        "notes": "The opening question 'Who's watching the door?' immediately establishes a clear, relatable security context for developers without resorting to alarmist tactics."
+      },
+      "message_clarity": {
+        "score": 8,
+        "notes": "The progression from an unsecured state to a fully layered, zero-code security architecture is exceptionally clear. The visual transition from grey to purple elements maps perfectly to the narrative."
+      },
+      "narrative_coherence": {
+        "score": 9,
+        "notes": "Excellent logical flow. It systematically addresses identity, ingress, egress, registry, and content governance, culminating in a highly satisfying visual payoff where all five layers snap into a protective ring."
+      },
+      "call_to_action": {
+        "score": 8,
+        "notes": "The closing beat 'zero security code written' lands perfectly, delivering a quiet but powerful realization that this enterprise-grade security is already provisioned."
+      },
+      "production_value": {
+        "score": 8,
+        "notes": "Clean, minimalist 3Blue1Brown-inspired aesthetic. The strict color discipline (purple for security, green for the agent) is highly effective and maintains professional credibility."
+      },
+      "audience_fit": {
+        "score": 9,
+        "notes": "Perfect tone for senior developers and architects. It respects their intelligence by avoiding marketing fluff and focusing on concrete architectural concepts like SPIFFE, mTLS, and IAP."
+      }
+    },
+    "average_score": 8.3,
+    "verdict": "APPROVED",
+    "blocking_issues": [],
+    "v2_notes": [
+      "Consider adding subtle audio cues or a voiceover to further reinforce the transition beats as each security layer snaps into place."
+    ],
+    "marketing_copy_hook": "Deploy your Flue agents on GCP and get five interlocking layers of enterprise-grade security\u2014with zero security code written.",
+    "recommended_channels": [
+      "developer docs",
+      "LinkedIn",
+      "GCP console integration pages",
+      "technical blog posts"
+    ],
+    "one_line_verdict": "An exceptionally clear, technically respectful explainer that perfectly communicates the value of GCP's zero-code security stack to developers.",
+    "model_suggested_verdict": "APPROVED"
+  }
+}

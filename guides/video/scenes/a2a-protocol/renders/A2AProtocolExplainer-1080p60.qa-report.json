@@ -1,0 +1,101 @@
+{
+  "preflight": {
+    "path": "/Users/alanblount/Workspaces/scratchpad/open-source/flueframework-exploration/guides/video/scenes/a2a-protocol/renders/A2AProtocolExplainer-1080p60.mp4",
+    "exists": true,
+    "size_mb": 1.6,
+    "extension": ".mp4",
+    "duration_s": 26.6,
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60.0
+  },
+  "pass1": {
+    "pass": 1,
+    "model": "gemini-3.1-flash-lite",
+    "dimensions": {
+      "visual_clarity": {
+        "score": 8,
+        "notes": "The layout is clean and the use of nodes to represent agents is effective. The transition from isolated islands to a connected mesh is logically sound and easy to follow."
+      },
+      "timing_pacing": {
+        "score": 7,
+        "notes": "The pacing is generally good, though the 'message:send' lifecycle section (00:13-00:16) feels slightly rushed; the viewer has very little time to process the state transitions before the next scene begins."
+      },
+      "color_discipline": {
+        "score": 9,
+        "notes": "Excellent use of color coding. The consistent use of yellow for A2A connections and distinct colors for different frameworks creates a very strong, intuitive visual language."
+      },
+      "text_readability": {
+        "score": 7,
+        "notes": "The text is generally legible, but the JSON snippet at 00:06 is quite small and dense, which might be difficult for viewers on smaller screens or mobile devices to parse quickly."
+      },
+      "transition_quality": {
+        "score": 8,
+        "notes": "Transitions are smooth and purposeful. The animation of the yellow lines connecting the nodes at 00:20 is satisfying and clearly communicates the 'mesh' concept."
+      },
+      "professional_polish": {
+        "score": 7,
+        "notes": "The production is clean, but the alignment of some elements (like the 'submitted'/'working'/'completed' boxes) feels slightly loose. The overall aesthetic is professional and fits the 3Blue1Brown-inspired brief well."
+      }
+    },
+    "average_score": 7.7,
+    "critical_issues": [],
+    "suggestions": [
+      "Increase the duration of the lifecycle state transition (00:13-00:16) by 1-2 seconds to allow the viewer to digest the flow.",
+      "Increase the font size or contrast of the JSON snippet at 00:06 to ensure it is readable at a glance.",
+      "Ensure the alignment of the lifecycle boxes is perfectly centered or snapped to a grid for a more polished look."
+    ],
+    "standout_positives": [
+      "The visual metaphor of 'islands' turning into a 'mesh' is a perfect execution of the core message.",
+      "The color-coding system is highly effective and makes the complex concept of framework interoperability immediately understandable."
+    ],
+    "one_line_verdict": "A highly effective, clean, and well-structured explainer that successfully simplifies a complex technical concept through strong visual hierarchy."
+  },
+  "pass2": {
+    "pass": 2,
+    "model": "gemini-3.5-flash",
+    "dimensions": {
+      "first_impression": {
+        "score": 8,
+        "notes": "The opening hook 'Agents are islands' immediately addresses a real pain point for developers working with fragmented AI agent frameworks."
+      },
+      "message_clarity": {
+        "score": 9,
+        "notes": "Extremely clear. It breaks down the protocol into three digestible concepts (Agent Cards, message:send, and the task lifecycle) and shows the final connected mesh."
+      },
+      "narrative_coherence": {
+        "score": 9,
+        "notes": "Perfect logical progression. It starts with the problem (silos), introduces the discovery mechanism (JSON cards), explains the communication protocol (HTTP/lifecycle), and shows the multi-framework payoff."
+      },
+      "call_to_action": {
+        "score": 8,
+        "notes": "Clear call to action pointing to a2a-protocol.org and introducing the 'A2A Integration Factory' concept."
+      },
+      "production_value": {
+        "score": 9,
+        "notes": "Clean, minimalist 3Blue1Brown-style animation. The color-coded framework nodes and yellow connection lines make the architectural concepts easy to follow."
+      },
+      "audience_fit": {
+        "score": 9,
+        "notes": "Highly appropriate for developers. It uses concrete technical terms like JSON, HTTP calls, and /.well-known/ paths without getting bogged down in unnecessary implementation details."
+      }
+    },
+    "average_score": 8.7,
+    "verdict": "APPROVED",
+    "blocking_issues": [],
+    "v2_notes": [
+      "Consider adding a very brief code snippet overlay of the actual JSON card structure to ground the 'Agent Cards' concept even further for highly technical viewers."
+    ],
+    "marketing_copy_hook": "Stop building agent silos\u2014connect any framework with the open A2A protocol.",
+    "recommended_channels": [
+      "developer docs",
+      "GitHub repository readme",
+      "LinkedIn",
+      "conference demo reel",
+      "X / Twitter"
+    ],
+    "one_line_verdict": "An exceptionally clear, visually elegant explainer that perfectly articulates the value of agent interoperability to a developer audience.",
+    "model_suggested_verdict": "APPROVED"
+  }
+}
