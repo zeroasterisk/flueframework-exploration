@@ -186,10 +186,21 @@ def make_node(label, color, width=2.2, height=0.65):
 ## Production Workflow
 
 1. **Script** — write narrative + storyboard in `guides/video/scenes/<slug>/STORYBOARD.md`
-2. **Code** — write Manim scene in `guides/video/scenes/<slug>/` (use OpenMontage skills for best practices); **commit the source**
-3. **Render low-quality** — `manim -ql` for fast iteration
-4. **Review** — code review + visual review (use Gemini Flash for video analysis when possible); log feedback in STORYBOARD.md
-5. **Iterate** — fix issues, re-render
-6. **Render production** — `manim -qh` or `-qk` for final
+   Use `manim-composer` skill (via CloudCode) to plan before writing code.
+2. **Code** — write Manim (or other) scene per `manimce-best-practices` skill; **commit source**
+3. **Render low-quality** — `manim -ql` for fast iteration; review frames
+4. **Iterate** — fix layout/timing issues, re-render
+5. **Render production** — `manim -qh` for 1080p60 final
+6. **QA loop** — run the two-pass Gemini reviewer against the production render:
+   ```bash
+   cd ~/Workspaces/open-source/OpenMontage && source .venv/bin/activate
+   export GOOGLE_CLOUD_PROJECT=alanblount-sandbox GOOGLE_CLOUD_LOCATION=global GOOGLE_GENAI_USE_ENTERPRISE=true
+   python .claude/skills/video-qa/tools/video_qa.py renders/MyVideo-1080p60.mp4 \
+     --context-file context.md
+   # Report saved as renders/MyVideo-1080p60.qa-report.md
+   # Pass 1 (gemini-3.1-flash-lite, designer): gate ≥6.5 → proceed to pass 2
+   # Pass 2 (gemini-3.5-flash, marketing PM): APPROVED ≥7.5 → ship
+   ```
+   Fix any critical issues → re-render → re-run QA → commit when APPROVED.
 7. **Upload** — GCS bucket (`gs://alanblount-demo_cloudbuild/manim-output/`), record link in scene README
 8. **Deliver** — send link via Telegram or embed in repo; update the Video Pipeline Status table in this file
