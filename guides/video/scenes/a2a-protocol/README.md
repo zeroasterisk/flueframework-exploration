@@ -22,8 +22,9 @@ Output lands in `media/videos/a2a_protocol/<quality>/A2AProtocolExplainer.mp4`
 
 | Version | Spec | Location | Notes |
 |---|---|---|---|
-| v1 | 1080p60, 26.6s, 1.6MB | [`renders/A2AProtocolExplainer-1080p60.mp4`](renders/A2AProtocolExplainer-1080p60.mp4) | committed as exception — GCS auth unavailable at render time |
-| v1 | GCS | `gs://alanblount-demo_cloudbuild/manim-output/A2AProtocolExplainer-1080p60.mp4` | **pending upload** — run `gsutil cp renders/*.mp4 gs://alanblount-demo_cloudbuild/manim-output/` after `gcloud auth login`, then remove the committed MP4 |
+| v1 | 1080p60, 26.6s, 1.6MB | [`renders/A2AProtocolExplainer-1080p60.mp4`](renders/A2AProtocolExplainer-1080p60.mp4) | committed to repo |
+| v1 | GCS (public) | `gs://alanblount-demo-public/manim-output/A2AProtocolExplainer-1080p60.mp4` | ✅ uploaded 2026-07-01 |
+| v1 | Public URL | https://storage.googleapis.com/alanblount-demo-public/manim-output/A2AProtocolExplainer-1080p60.mp4 | ✅ live |
 
 ## Review notes (v1, from -ql frame review)
 

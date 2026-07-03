@@ -30,8 +30,9 @@ manim -qh --format=mp4 security_deep_dive.py SecurityDeepDive   # 1080p60 produc
 
 | Version | Spec | Location | Notes |
 |---|---|---|---|
-| v1 | 1080p60, 30.6s, 1.8MB | [`renders/SecurityDeepDive-1080p60.mp4`](renders/SecurityDeepDive-1080p60.mp4) | committed; GCS upload pending |
-| v1 | GCS | `gs://alanblount-demo_cloudbuild/manim-output/SecurityDeepDive-1080p60.mp4` | **pending** — run `gsutil cp renders/*.mp4 gs://...` after `gcloud auth login` |
+| v1 | 1080p60, 30.6s, 1.8MB | [`renders/SecurityDeepDive-1080p60.mp4`](renders/SecurityDeepDive-1080p60.mp4) | committed to repo |
+| v1 | GCS (public) | `gs://alanblount-demo-public/manim-output/SecurityDeepDive-1080p60.mp4` | ✅ uploaded 2026-07-01 |
+| v1 | Public URL | https://storage.googleapis.com/alanblount-demo-public/manim-output/SecurityDeepDive-1080p60.mp4 | ✅ live |
 
 ## Review notes (v1)
 
