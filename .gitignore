@@ -1,5 +1,13 @@
 node_modules/
 
 # Manim render workspace (keep final renders in scenes/*/renders/)
+# Rendered MP4s stay out of git — upload to GCS, link from the scene README.
 guides/video/scenes/*/media/
+guides/video/style-pilots/media/
+guides/video/eval/tools/media/
+
+# Reference video corpus — third-party content, local eval use only.
+# Never redistribute or commit (see guides/video/eval/datasets/A_reference_corpus.md).
+guides/video/eval/corpus/
+
 __pycache__/

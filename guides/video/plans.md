@@ -168,9 +168,61 @@ def make_node(label, color, width=2.2, height=0.65):
 - Palette anchor: `PURPLE_ACC` for security elements
 
 ### Video 3: Optimization Deep Dive
-- **Slug:** `optimization` | **Content source:** exploration READMEs + Exgentic/PinchBench results (a2a-integration-factory `frameworks/flue/STATUS.md`)
+- **Slug:** `optimization` | **Content source:** `google-agents-cli-eval` SKILL.md
+  "Quality Flywheel" (canonical — see below), exploration READMEs, Exgentic/
+  PinchBench results (a2a-integration-factory `frameworks/flue/STATUS.md`)
 - Expands the 2s placeholder chapter from Video 1
-- Beats: define success metrics → instrument (OpenTelemetry, Cloud Trace) → evaluate (Exgentic, PinchBench) → simulate scenarios → continuous improvement loop (circular arrow motif)
+- Continuation of the Security Deep Dive video's Scene 6 (OTel span waterfall)
+  — that video ends with traces flowing to Cloud Trace; this one picks up
+  "now what do you DO with those traces?"
+- **Brief drafted 2026-07-05** (Alan's feedback on Security Deep Dive v3):
+  take the OTel traces, add evaluation datasets and scenarios, instrument
+  success, add LLM-as-judge auto-graders, simulate to test new agent
+  versions, and audit production traces. This is a hill-climbing, agent
+  quality flywheel — DevOps → MLOps → AgentOps — with a basic iterative loop.
+  Enumerate the steps explicitly (don't just show a generic circular arrow).
+
+#### The Quality Flywheel (5 stages, source: `google-agents-cli-eval` SKILL.md)
+
+1. **Prepare Data** — define eval cases (single-turn prompts, or synthesize
+   multi-turn user-simulation scenarios server-side from the agent's tools +
+   instructions when hand-written data is scarce).
+2. **Run Inference** — execute the agent over the dataset, capture full
+   traces (tool calls, reasoning, responses) to disk.
+3. **Grade Traces** — score every trace against metrics: built-in
+   (`multi_turn_task_success`, `multi_turn_trajectory_quality`,
+   `multi_turn_tool_use_quality`, `final_response_quality`, `hallucination`,
+   `safety`) or custom (LLM-as-judge rubric, or deterministic code-based).
+   This is the one stage with no shortcut — always run.
+4. **Analyze Failures** — read per-case rationales; for 10+ failing cases,
+   LLM-based failure clustering groups them into root-cause categories
+   instead of manual case-by-case review.
+5. **Optimize & Code Fix** — the default path is a human/agent editing
+   prompts, tool descriptions, or instructions based on the failure
+   analysis; the opt-in path is automated prompt optimization (GEPA) against
+   a target metric — expensive, run once per iteration cycle, not looped.
+   Then loop back to stage 2 (or 1, if scenarios were synthesized) and
+   re-measure with `eval compare` to confirm the fix improved the target
+   metric without regressing others.
+
+**DevOps → MLOps → AgentOps framing:** DevOps hill-climbs on code correctness
+(unit tests, CI). MLOps hill-climbs on model quality (offline eval, A/B).
+AgentOps hill-climbs on *agent behavior* — trajectory quality, tool-use
+correctness, task success — using the same instrument-measure-fix loop, but
+the "test suite" is an eval dataset graded by an LLM judge instead of
+assertions. The visual through-line: production traces (from Security Deep
+Dive's OTel scene) feed the eval loop; eval failures produce fixes; fixes
+produce new traces; repeat.
+
+- Beats (revised): OTel traces arrive (continuation of prior video) → Prepare
+  eval data (datasets + synthesized scenarios) → Run inference, capture
+  traces → Grade against metrics (LLM-as-judge auto-graders) → Analyze
+  failures (clustering) → Optimize (prompt/code fix, or GEPA) → loop back,
+  `eval compare` confirms improvement → zoom out to the DevOps → MLOps →
+  AgentOps framing as the single coherent mental model
+- Not yet scoped: whether this chapters together with Security Deep Dive
+  into one longer overview, or stays a standalone ~30-45s video. Alan noted
+  both are viable — decide when starting this video.
 
 ### Video 4: A2A Protocol Explainer
 - **Slug:** `a2a-protocol` | **Content source:** [A2A spec](https://a2a-protocol.org/latest/specification/), [`guides/tutorial-add-a2a-to-flue.md`](../tutorial-add-a2a-to-flue.md), `05-a2a-channel/`
