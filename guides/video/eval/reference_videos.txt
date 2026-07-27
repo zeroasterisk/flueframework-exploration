@@ -1,0 +1,11 @@
+# 3Blue1Brown reference set — subtitles only, for pacing analysis.
+ytsearch1:3Blue1Brown Vectors Chapter 1 Essence of linear algebra
+ytsearch1:3Blue1Brown But what is a neural network chapter 1 deep learning
+ytsearch1:3Blue1Brown But what is a Fourier series circles
+ytsearch1:3Blue1Brown Essence of calculus chapter 1
+ytsearch1:3Blue1Brown But what is a convolution
+ytsearch1:3Blue1Brown Bayes theorem the geometry of changing beliefs
+ytsearch1:3Blue1Brown But what is the Central Limit Theorem
+ytsearch1:3Blue1Brown Linear transformations and matrices chapter 3
+ytsearch1:3Blue1Brown Gradient descent how neural networks learn
+ytsearch1:3Blue1Brown But what is a GPT visual intro to transformers

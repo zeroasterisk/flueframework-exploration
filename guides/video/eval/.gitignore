@@ -3,3 +3,4 @@ corpus/
 # Render artifacts from the ablation generator.
 tools/media/
 tools/__pycache__/
+ref_pacing/subs/
