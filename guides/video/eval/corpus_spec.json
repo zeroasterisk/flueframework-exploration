@@ -1,0 +1,74 @@
+{
+  "_comment": [
+    "Corpus spec for pairwise judging. Consumed by the manim-video-quality",
+    "skill's scripts/prep_corpus.py, which cuts a 25s excerpt from each entry",
+    "and normalizes all of them to an identical encode (720p30, no audio) so",
+    "neither a human nor a model can infer quality from technical metadata.",
+    "",
+    "Reference clips are fetched for LOCAL EVAL USE ONLY. Do not redistribute.",
+    "corpus/ is gitignored."
+  ],
+  "clips": [
+    {
+      "id": "ref-linalg",
+      "source": "remote",
+      "query": "ytsearch1:3Blue1Brown Vectors Chapter 1 Essence of linear algebra",
+      "start": "2:10",
+      "band": "REFERENCE",
+      "note": "canonical morph-driven geometry, minimal text"
+    },
+    {
+      "id": "ref-neuralnet",
+      "source": "remote",
+      "query": "ytsearch1:3Blue1Brown But what is a neural network chapter 1",
+      "start": "3:10",
+      "band": "REFERENCE",
+      "note": "node/edge network diagrams — closest analogue to our topology scenes"
+    },
+    {
+      "id": "ref-fourier",
+      "source": "remote",
+      "query": "ytsearch1:3Blue1Brown But what is a Fourier series circles",
+      "start": "1:40",
+      "band": "REFERENCE",
+      "note": "dense simultaneous motion done well"
+    },
+    {
+      "id": "ours-v1",
+      "source": "local",
+      "path": "~/Workspaces/scratchpad/open-source/flueframework-exploration/guides/video/scenes/security/renders/SecurityDeepDive-1080p60.mp4",
+      "band": "LOW",
+      "human_verdict": "rejected by Alan"
+    },
+    {
+      "id": "ours-v2",
+      "source": "local",
+      "path": "~/Workspaces/scratchpad/open-source/flueframework-exploration/guides/video/scenes/security/renders/SecurityDeepDive-1080p60-v2.mp4",
+      "band": "LOW",
+      "human_verdict": "rejected by Alan"
+    },
+    {
+      "id": "ours-v4",
+      "source": "local",
+      "path": "~/Workspaces/scratchpad/open-source/flueframework-exploration/guides/video/scenes/security/media/videos/security_deep_dive/1080p60/SecurityDeepDive.mp4",
+      "start": 6,
+      "band": "MID",
+      "human_verdict": "looks a lot better, but kerning/animation/timing still wrong"
+    },
+    {
+      "id": "ours-a2a",
+      "source": "local",
+      "path": "~/Workspaces/scratchpad/open-source/flueframework-exploration/guides/video/scenes/a2a-protocol/renders/A2AProtocolExplainer-1080p60.mp4",
+      "band": "MID-HIGH",
+      "human_verdict": "approved and shipped"
+    },
+    {
+      "id": "ours-pilot1",
+      "source": "local",
+      "path": "~/Workspaces/scratchpad/open-source/flueframework-exploration/guides/video/style-pilots/media/videos/pilot_01_identity_ceremony/1080p60/IdentityCeremony.mp4",
+      "start": 4,
+      "band": "PENDING",
+      "human_verdict": "not yet reviewed — first attempt at the new dark 3b1b-inspired style"
+    }
+  ]
+}
