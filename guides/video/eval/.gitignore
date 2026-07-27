@@ -1,0 +1,5 @@
+# Reference media — local eval only, never redistribute or commit.
+corpus/
+# Render artifacts from the ablation generator.
+tools/media/
+tools/__pycache__/

@@ -1,0 +1,114 @@
+{
+  "summary": {
+    "A_true60": {
+      "mean_avg": 7.56,
+      "sd_avg": 0.196,
+      "mean_polish": 7.67,
+      "mean_transition": 7,
+      "n": 3
+    },
+    "B_false15": {
+      "mean_avg": 5.66,
+      "sd_avg": 0.289,
+      "mean_polish": 4.67,
+      "mean_transition": 5.67,
+      "n": 3
+    },
+    "C_none": {
+      "mean_avg": 7.33,
+      "sd_avg": 0.165,
+      "mean_polish": 6.33,
+      "mean_transition": 7,
+      "n": 3
+    }
+  },
+  "raw": {
+    "A_true60": [
+      {
+        "visual_clarity": 8,
+        "timing_pacing": 5,
+        "color_discipline": 9,
+        "text_readability": 9,
+        "transition_quality": 7,
+        "professional_polish": 8,
+        "_avg": 7.67
+      },
+      {
+        "visual_clarity": 8,
+        "timing_pacing": 5,
+        "color_discipline": 9,
+        "text_readability": 9,
+        "transition_quality": 7,
+        "professional_polish": 8,
+        "_avg": 7.67
+      },
+      {
+        "visual_clarity": 8,
+        "timing_pacing": 5,
+        "color_discipline": 9,
+        "text_readability": 8,
+        "transition_quality": 7,
+        "professional_polish": 7,
+        "_avg": 7.33
+      }
+    ],
+    "B_false15": [
+      {
+        "visual_clarity": 5,
+        "timing_pacing": 4,
+        "color_discipline": 8,
+        "text_readability": 6,
+        "transition_quality": 5,
+        "professional_polish": 4,
+        "_avg": 5.33
+      },
+      {
+        "visual_clarity": 6,
+        "timing_pacing": 4,
+        "color_discipline": 8,
+        "text_readability": 7,
+        "transition_quality": 5,
+        "professional_polish": 5,
+        "_avg": 5.83
+      },
+      {
+        "visual_clarity": 6,
+        "timing_pacing": 5,
+        "color_discipline": 8,
+        "text_readability": 4,
+        "transition_quality": 7,
+        "professional_polish": 5,
+        "_avg": 5.83
+      }
+    ],
+    "C_none": [
+      {
+        "visual_clarity": 8,
+        "timing_pacing": 5,
+        "color_discipline": 9,
+        "text_readability": 8,
+        "transition_quality": 7,
+        "professional_polish": 6,
+        "_avg": 7.17
+      },
+      {
+        "visual_clarity": 8,
+        "timing_pacing": 5,
+        "color_discipline": 9,
+        "text_readability": 9,
+        "transition_quality": 7,
+        "professional_polish": 7,
+        "_avg": 7.5
+      },
+      {
+        "visual_clarity": 8,
+        "timing_pacing": 5,
+        "color_discipline": 9,
+        "text_readability": 9,
+        "transition_quality": 7,
+        "professional_polish": 6,
+        "_avg": 7.33
+      }
+    ]
+  }
+}
