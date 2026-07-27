@@ -1,4 +1,7 @@
-# Dataset A — Reference corpus with human ground truth
+# Dataset A — Reference corpus (this project's instance)
+
+> Schema, protocol, and rationale: `~/Workspaces/skills/manim-video-quality/`
+> `datasets/A_reference_corpus.md`. This file is *our* filled-in corpus.
 
 Purpose: **calibration anchors.** Establish what the top and bottom of the
 scale actually look like, and provide human-labeled items to validate the

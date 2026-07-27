@@ -1,6 +1,6 @@
 This is Pilot 1 of a new visual style — a deliberate calibration exercise,
-NOT a finished marketing video. See ../visual-style.md and
-../storytelling-cheatsheet.md for the full spec.
+NOT a finished marketing video. See ~/Workspaces/skills/manim-video-quality/reference/style-3b1b-google.visual-style.md and
+~/Workspaces/skills/manim-video-quality/reference/storytelling-vocabulary.md for the full spec.
 
 Intent: adopt 3Blue1Brown's dark, patient, math-explainer visual grammar
 (near-black background, thin unfilled/low-opacity shapes, generous negative

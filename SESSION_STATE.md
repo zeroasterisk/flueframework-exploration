@@ -39,9 +39,9 @@ than expected. Evidence:
 
 New directory `guides/video/eval/` contains the full critique + plan:
 - `README.md` — critique with evidence, 7-phase plan of work
-- `QUALITY_SPEC.md` — testable quality definition; every rule has a check,
+- (moved to skill) `reference/quality-spec.md`
   typed `SRC`/`FRAME`/`OCR`/`LLM`/`HUMAN`. Single source for creation + review.
-- `METHODOLOGY.md` — how to run Gemini video analysis validly (1 FPS limits,
+- (moved to skill) `reference/gemini-video-analysis.md`
   metadata stripping, forced-choice, blinding, banned context phrases)
 - `datasets/A_reference_corpus.md` — real 3b1b anchors + our renders with
   Alan's existing accept/reject labels as ground truth
@@ -69,7 +69,7 @@ visual + narrative toolbox at small scale — one sub-chapter/scene at a time �
 before attempting another full-video pass. Two durable reference docs created
 this session (read these before starting ANY video work):
 
-- `guides/video/visual-style.md` — a `visual-style.md`-spec style file: 3b1b's
+- `~/Workspaces/skills/manim-video-quality/reference/style-3b1b-google.visual-style.md` — a `visual-style.md`-spec style file: 3b1b's
   dark, patient, math-explainer visual grammar (near-black background, thin
   stroked shapes, sparse text, slow morph-driven motion) with Google's exact
   brand colors reserved ONLY for "this is the product" / semantic
@@ -77,7 +77,7 @@ this session (read these before starting ANY video work):
   from v1-v4's light-background "software dashboard" look (opaque rounded-
   rectangle cards, UI-chrome aesthetic) — treat that look as the anti-pattern
   to move away from now.
-- `guides/video/storytelling-cheatsheet.md` — shared vocabulary: beat,
+- `~/Workspaces/skills/manim-video-quality/reference/storytelling-vocabulary.md` — shared vocabulary: beat,
   vignette, pillar, aha moment, payoff, persistence contract, chaos-to-order
   arc, morph, camera reveal, LaggedStart burst, reserved color, card-itis
   (anti-pattern), incremental QA, context file, gate, pilot scene, etc. Use

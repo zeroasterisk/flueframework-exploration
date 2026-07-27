@@ -1,6 +1,6 @@
 """Pilot 1: Workload Identity Ceremony — calibrating visual-style.md.
 
-First pilot scene rebuilt against ../visual-style.md (3Blue1Brown x Google
+First pilot scene rebuilt against ~/Workspaces/skills/manim-video-quality/reference/style-3b1b-google.visual-style.md (3Blue1Brown x Google
 hybrid). Deliberately small and self-contained. Compare directly against the
 equivalent beat in scenes/security/security_deep_dive.py's scene4_identity
 (the light-background, card-style, fast-cut version) to judge the pivot.
@@ -8,7 +8,7 @@ equivalent beat in scenes/security/security_deep_dive.py's scene4_identity
 What this pilot is testing:
   - Dark near-black canvas instead of light "software dashboard" background
   - Thin, low-fill-opacity shapes instead of opaque rounded-rectangle cards
-  - Roboto font (Helvetica Neue confirmed buggy — see storytelling-cheatsheet.md)
+  - Roboto font (Helvetica Neue confirmed buggy — see the manim-video-quality skill)
   - Slow, patient pacing (run_time 1.5-3s, wait 2-4s) instead of 0.3-0.8s cuts
   - Camera push-in (MovingCameraScene) instead of a hard cut
   - Minimal text: exactly ONE line, appearing only after the visual resolves
@@ -38,7 +38,7 @@ from manim import (
 )
 
 # ---------------------------------------------------------------------------
-# Palette — from ../visual-style.md
+# Palette — from ~/Workspaces/skills/manim-video-quality/reference/style-3b1b-google.visual-style.md
 # ---------------------------------------------------------------------------
 BG = "#0E0E10"
 WHITE = "#FFFFFF"

@@ -1,7 +1,7 @@
 # Style Pilot Log
 
 Tracks each small calibration pilot: what was tested, QA results, and what
-we learned. Read `../visual-style.md` and `../storytelling-cheatsheet.md`
+we learned. Read `~/Workspaces/skills/manim-video-quality/reference/style-3b1b-google.visual-style.md` and `~/Workspaces/skills/manim-video-quality/reference/storytelling-vocabulary.md`
 first for the vocabulary and spec these pilots are calibrating against.
 
 ---
