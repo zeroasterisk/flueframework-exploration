@@ -1,0 +1,20 @@
+{
+  "seed": 0,
+  "normalization": {
+    "note": "1280x720/30fps/aac, identical narration track"
+  },
+  "clips": [
+    {
+      "id": "text-none",
+      "file": "tclip_01.mp4"
+    },
+    {
+      "id": "text-anchor",
+      "file": "tclip_02.mp4"
+    },
+    {
+      "id": "text-caption",
+      "file": "tclip_03.mp4"
+    }
+  ]
+}

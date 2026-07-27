@@ -1,0 +1,17 @@
+[
+  {
+    "a": "tclip_01.mp4",
+    "b": "tclip_02.mp4",
+    "why": "no on-screen text  vs  short anchors"
+  },
+  {
+    "a": "tclip_02.mp4",
+    "b": "tclip_03.mp4",
+    "why": "short anchors  vs  full caption of the narration"
+  },
+  {
+    "a": "tclip_01.mp4",
+    "b": "tclip_03.mp4",
+    "why": "no on-screen text  vs  full caption"
+  }
+]

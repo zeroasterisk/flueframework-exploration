@@ -1,0 +1,37 @@
+{
+  "pooled": {
+    "n": 3,
+    "text_frame_pct_median": 96.0,
+    "words_on_screen_median": 18.5,
+    "words_on_screen_p90_median": 23
+  },
+  "per_video": [
+    {
+      "video": "clip_01.mp4",
+      "duration_s": 25.0,
+      "frames": 25,
+      "text_frame_pct": 88.0,
+      "words_on_screen_median": 18.5,
+      "words_on_screen_p90": 23,
+      "words_on_screen_max": 24
+    },
+    {
+      "video": "clip_04.mp4",
+      "duration_s": 25.0,
+      "frames": 25,
+      "text_frame_pct": 96.0,
+      "words_on_screen_median": 8.0,
+      "words_on_screen_p90": 9,
+      "words_on_screen_max": 10
+    },
+    {
+      "video": "clip_05.mp4",
+      "duration_s": 25.0,
+      "frames": 25,
+      "text_frame_pct": 100.0,
+      "words_on_screen_median": 80,
+      "words_on_screen_p90": 87,
+      "words_on_screen_max": 92
+    }
+  ]
+}

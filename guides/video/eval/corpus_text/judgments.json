@@ -1,0 +1,47 @@
+{
+  "started": "2026-07-27T23:00:41.042157+00:00",
+  "question": "Which is closer to the target: a patient, idea-first technical explainer in the 3Blue1Brown tradition?",
+  "judgments": [
+    {
+      "pair_id": "tclip_01.mp4|tclip_02.mp4",
+      "left": "tclip_01.mp4",
+      "right": "tclip_02.mp4",
+      "choice": "right",
+      "winner_file": "tclip_02.mp4",
+      "winner_id": "text-anchor",
+      "left_id": "text-none",
+      "right_id": "text-anchor",
+      "note": "",
+      "elapsed_s": 19.6,
+      "ts": "2026-07-27T23:03:06.745921+00:00"
+    },
+    {
+      "pair_id": "tclip_02.mp4|tclip_03.mp4",
+      "left": "tclip_02.mp4",
+      "right": "tclip_03.mp4",
+      "choice": "left",
+      "winner_file": "tclip_02.mp4",
+      "winner_id": "text-anchor",
+      "left_id": "text-anchor",
+      "right_id": "text-caption",
+      "note": "",
+      "elapsed_s": 89.7,
+      "ts": "2026-07-27T23:04:36.422054+00:00"
+    },
+    {
+      "pair_id": "tclip_01.mp4|tclip_03.mp4",
+      "left": "tclip_03.mp4",
+      "right": "tclip_01.mp4",
+      "choice": "right",
+      "winner_file": "tclip_01.mp4",
+      "winner_id": "text-none",
+      "left_id": "text-caption",
+      "right_id": "text-none",
+      "note": "",
+      "elapsed_s": 24.0,
+      "ts": "2026-07-27T23:05:00.417415+00:00"
+    }
+  ],
+  "corpus_manifest": "/Users/alanblount/Workspaces/scratchpad/open-source/flueframework-exploration/guides/video/eval/corpus_text/manifest.json",
+  "pair_seed": 7
+}

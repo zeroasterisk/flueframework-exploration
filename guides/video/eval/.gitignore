@@ -4,3 +4,4 @@ corpus/
 tools/media/
 tools/__pycache__/
 ref_pacing/subs/
+corpus_text/*.mp4
