@@ -1,0 +1,71 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "seeds": 2,
+  "mean_accuracy": 0.8571428571428571,
+  "per_defect": {
+    "font_ttc_bug": {
+      "trials": 2,
+      "decided": 0,
+      "undecided": 2,
+      "correct": 0,
+      "accuracy": null,
+      "sample_reason": "Video B correctly renders the word 'LangChain' with a space as 'Lang Chain', whereas Video A renders it as 'LangChain' which is a slight deviation from the intended spacing."
+    },
+    "rushed_pacing": {
+      "trials": 2,
+      "decided": 2,
+      "undecided": 0,
+      "correct": 2,
+      "accuracy": 1.0,
+      "sample_reason": "Video A includes a longer pause at the beginning and between the appearance of the list items, allowing the viewer more time to process each element before the animation proceeds."
+    },
+    "card_itis": {
+      "trials": 2,
+      "decided": 2,
+      "undecided": 0,
+      "correct": 2,
+      "accuracy": 1.0,
+      "sample_reason": "Video A uses thin, elegant outlines for the text boxes and the hexagon, which feels more minimalist and conceptual compared to the solid, filled-in blocks in Video B that resemble a standard software UI."
+    },
+    "color_spray": {
+      "trials": 2,
+      "decided": 2,
+      "undecided": 0,
+      "correct": 2,
+      "accuracy": 1.0,
+      "sample_reason": "Video A uses a consistent, monochromatic teal color scheme for all elements, whereas Video B uses a distracting and unnecessary variety of colors for the list items."
+    },
+    "text_flood": {
+      "trials": 2,
+      "decided": 2,
+      "undecided": 0,
+      "correct": 2,
+      "accuracy": 1.0,
+      "sample_reason": "Video A displays significantly less text on the screen compared to Video B, which includes a dense paragraph of technical details."
+    },
+    "light_bg": {
+      "trials": 2,
+      "decided": 2,
+      "undecided": 0,
+      "correct": 2,
+      "accuracy": 1.0,
+      "sample_reason": "Video A uses a dark background that aligns with the requested theatrical aesthetic, whereas Video B uses a bright, high-contrast background."
+    },
+    "cut_not_morph": {
+      "trials": 2,
+      "decided": 2,
+      "undecided": 0,
+      "correct": 0,
+      "accuracy": 0.0,
+      "sample_reason": "Video B includes a final animation where the hexagon reappears around the circle, providing a more complete visual closure to the sequence of ideas."
+    },
+    "overlap_nodes": {
+      "trials": 2,
+      "decided": 2,
+      "undecided": 0,
+      "correct": 2,
+      "accuracy": 1.0,
+      "sample_reason": "In video A, the list of items is vertically aligned with consistent spacing, whereas in video B, the items are clustered together in a way that causes them to overlap or collide."
+    }
+  }
+}

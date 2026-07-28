@@ -45,6 +45,49 @@ evidence is below.
    v4. It is our only item with rich itemized human feedback. Recover from git
    history if possible; going forward archive render + source together.
 
+## Results (2026-07-28)
+
+The measurement work is done and the tooling lives in the
+`manim-video-quality` skill. Headline findings, all reproducible:
+
+**The deterministic checker and the LLM grader are complementary.** Scored
+against fixtures with ground truth by construction:
+
+| defect class | deterministic | LLM |
+|---|---|---|
+| phantom word gaps | yes | **no signal (position bias)** |
+| cuts instead of morphs | yes | **0% — reliably inverted** |
+| rushed pacing / cards / colour / text flood / background | yes | 100% |
+| **spatial overlap** | **no** | **100%** |
+
+Together 8/8; neither alone. Route accordingly — deterministic first (free
+and exact), model only for spatial layout and narrative.
+
+**The LLM's typography failure is worse than blindness.** Asked which of two
+clips renders words correctly, it chose the second slot all ten times
+regardless of content, and justified it by inverting the defect: *"Video B
+correctly renders the word 'LangChain' with a space as 'Lang Chain'"*. This
+is the same defect it scored `text_readability: 9/10` on, now reproduced
+under controlled conditions.
+
+**Our own scenes, scored:**
+
+| scene | blocks | warns | reward |
+|---|---|---|---|
+| Security Deep Dive v4 | **18** | 31 | 0.00 |
+| Pilot 1 (dark style) | 0 | 1 | 0.90 |
+| variant_scene (current practice) | 0 | 1 | 0.90 |
+
+v4's 18 blocks are real and specific: light background, opaque cards
+(fill_opacity up to 0.95), and eight genuine phantom word gaps
+(`Lang|Chain`, `Pyd|antic`, `Antig|ravity`, `Op|enClaw`, plus `Claude`,
+`Hermes`, `BigQuery`, `mature`). The v4 QA report claiming 9.0/10 should be
+disregarded.
+
+**Reference pacing, measured from 9 clips:** ~205 wpm speaking, ~90% speech
+density, ~3.5s beats, ink coverage ~11% of frame, longest static hold up to
+7s. Our scenes are *sparser* than the reference (3.8% ink), not denser.
+
 ## Plan of work
 
 Phases and validation bars are defined in the skill

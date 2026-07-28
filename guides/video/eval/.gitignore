@@ -5,3 +5,6 @@ tools/media/
 tools/__pycache__/
 ref_pacing/subs/
 corpus_text/*.mp4
+corpus_abl/*.mp4
+corpus_ref2/*.mp4
+corpus_ref2/*.png
