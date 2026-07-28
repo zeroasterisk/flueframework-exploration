@@ -1,0 +1,96 @@
+{
+  "mode": "detect",
+  "model": "gemini-2.5-flash-lite",
+  "seeds": 5,
+  "mean_accuracy": 0.25,
+  "per_defect": {
+    "font_ttc_bug": {
+      "seeds": 5,
+      "decided": 5,
+      "undecided": 0,
+      "correct": 0,
+      "inverted": 0,
+      "position_a": 5,
+      "position_b": 0,
+      "accuracy": 0.0,
+      "sample_reason": "Video A renders the word 'OpenClaw' correctly, while Video B displays it with a slight visual glitch."
+    },
+    "rushed_pacing": {
+      "seeds": 5,
+      "decided": 5,
+      "undecided": 0,
+      "correct": 0,
+      "inverted": 0,
+      "position_a": 5,
+      "position_b": 0,
+      "accuracy": 0.0,
+      "sample_reason": "Video A presents the text and shapes with a slower, more deliberate pace, allowing more time for the viewer to process each element."
+    },
+    "card_itis": {
+      "seeds": 5,
+      "decided": 5,
+      "undecided": 0,
+      "correct": 0,
+      "inverted": 0,
+      "position_a": 5,
+      "position_b": 0,
+      "accuracy": 0.0,
+      "sample_reason": "Video A uses a more abstract and minimalist visual style with simple shapes and text, whereas Video B incorporates elements that resemble a software user interface."
+    },
+    "color_spray": {
+      "seeds": 5,
+      "decided": 5,
+      "undecided": 0,
+      "correct": 5,
+      "inverted": 0,
+      "position_a": 0,
+      "position_b": 0,
+      "accuracy": 1.0,
+      "sample_reason": "Video A uses a more limited and consistent color palette for the labels, with only blue and white, while Video B introduces a wider range of colors for the labels, including pink, teal, yellow, and purple."
+    },
+    "text_flood": {
+      "seeds": 5,
+      "decided": 5,
+      "undecided": 0,
+      "correct": 0,
+      "inverted": 0,
+      "position_a": 5,
+      "position_b": 0,
+      "accuracy": 0.0,
+      "sample_reason": "Video A displays less on-screen text than video B, which includes additional text at the bottom of the screen."
+    },
+    "light_bg": {
+      "seeds": 5,
+      "decided": 5,
+      "undecided": 0,
+      "correct": 5,
+      "inverted": 0,
+      "position_a": 0,
+      "position_b": 0,
+      "accuracy": 1.0,
+      "sample_reason": "Video A uses a dark background and subtle neon-like highlights, which aligns better with a theatrical explainer aesthetic than the bright white background of Video B."
+    },
+    "cut_not_morph": {
+      "seeds": 5,
+      "decided": 5,
+      "undecided": 0,
+      "correct": 0,
+      "inverted": 2,
+      "position_a": 3,
+      "position_b": 0,
+      "accuracy": 0.0,
+      "sample_reason": "Video A shows a smoother transition from the hexagon to the circle, maintaining visual continuity as one shape morphs into another."
+    },
+    "overlap_nodes": {
+      "seeds": 5,
+      "decided": 5,
+      "undecided": 0,
+      "correct": 0,
+      "inverted": 0,
+      "position_a": 5,
+      "position_b": 0,
+      "accuracy": 0.0,
+      "sample_reason": "Video A exhibits a cleaner layout as it does not have any overlapping or colliding elements, unlike Video B which shows a slight overlap between the 'OpenClaw' and 'Antigravity' elements."
+    }
+  }
+}

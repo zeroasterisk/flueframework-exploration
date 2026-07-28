@@ -1,0 +1,524 @@
+{
+  "total_clips": 71,
+  "videos": {
+    "counting_puzzle": [
+      "counting_puzzle_t045.mp4",
+      "counting_puzzle_t100.mp4",
+      "counting_puzzle_t130.mp4",
+      "counting_puzzle_t200.mp4",
+      "counting_puzzle_t230.mp4",
+      "counting_puzzle_t300.mp4",
+      "counting_puzzle_t400.mp4"
+    ],
+    "linalg_ch3": [
+      "linalg_ch3_t130.mp4",
+      "linalg_ch3_t300.mp4",
+      "linalg_ch3_t500.mp4",
+      "linalg_ch3_t700.mp4",
+      "linalg_ch3_t900.mp4"
+    ],
+    "linalg_ch4": [
+      "linalg_ch4_t130.mp4",
+      "linalg_ch4_t300.mp4",
+      "linalg_ch4_t500.mp4",
+      "linalg_ch4_t700.mp4",
+      "linalg_ch4_t900.mp4"
+    ],
+    "linalg_ch5": [
+      "linalg_ch5_t030.mp4",
+      "linalg_ch5_t130.mp4",
+      "linalg_ch5_t230.mp4",
+      "linalg_ch5_t300.mp4",
+      "linalg_ch5_t330.mp4",
+      "linalg_ch5_t400.mp4",
+      "linalg_ch5_t410.mp4"
+    ],
+    "linalg_ch8": [
+      "linalg_ch8_t1100.mp4",
+      "linalg_ch8_t130.mp4",
+      "linalg_ch8_t300.mp4",
+      "linalg_ch8_t500.mp4",
+      "linalg_ch8_t700.mp4",
+      "linalg_ch8_t900.mp4"
+    ],
+    "nn_ch2": [
+      "nn_ch2_t1200.mp4",
+      "nn_ch2_t130.mp4",
+      "nn_ch2_t1700.mp4",
+      "nn_ch2_t300.mp4",
+      "nn_ch2_t400.mp4",
+      "nn_ch2_t500.mp4",
+      "nn_ch2_t700.mp4",
+      "nn_ch2_t900.mp4"
+    ],
+    "nn_ch3": [
+      "nn_ch3_t1100.mp4",
+      "nn_ch3_t130.mp4",
+      "nn_ch3_t300.mp4",
+      "nn_ch3_t500.mp4",
+      "nn_ch3_t700.mp4",
+      "nn_ch3_t800.mp4",
+      "nn_ch3_t900.mp4"
+    ],
+    "quaternions": [
+      "quaternions_t130.mp4",
+      "quaternions_t1400.mp4",
+      "quaternions_t2000.mp4",
+      "quaternions_t2600.mp4",
+      "quaternions_t300.mp4",
+      "quaternions_t500.mp4",
+      "quaternions_t700.mp4",
+      "quaternions_t800.mp4",
+      "quaternions_t900.mp4"
+    ],
+    "sphere_area": [
+      "sphere_area_t1000.mp4",
+      "sphere_area_t130.mp4",
+      "sphere_area_t1300.mp4",
+      "sphere_area_t300.mp4",
+      "sphere_area_t400.mp4",
+      "sphere_area_t500.mp4",
+      "sphere_area_t700.mp4",
+      "sphere_area_t900.mp4"
+    ],
+    "transformers_p2": [
+      "transformers_p2_t1200.mp4",
+      "transformers_p2_t130.mp4",
+      "transformers_p2_t1800.mp4",
+      "transformers_p2_t200.mp4",
+      "transformers_p2_t2300.mp4",
+      "transformers_p2_t300.mp4",
+      "transformers_p2_t500.mp4",
+      "transformers_p2_t700.mp4",
+      "transformers_p2_t900.mp4"
+    ]
+  },
+  "clips": [
+    {
+      "file": "counting_puzzle_t045.mp4",
+      "video": "counting_puzzle",
+      "timestamp": "0:45",
+      "query": "The most unexpected answer to a counting puzzle 3blue1brown"
+    },
+    {
+      "file": "counting_puzzle_t100.mp4",
+      "video": "counting_puzzle",
+      "timestamp": "1:00",
+      "query": "The most unexpected answer to a counting puzzle 3blue1brown"
+    },
+    {
+      "file": "counting_puzzle_t130.mp4",
+      "video": "counting_puzzle",
+      "timestamp": "1:30",
+      "query": "The most unexpected answer to a counting puzzle 3blue1brown"
+    },
+    {
+      "file": "counting_puzzle_t200.mp4",
+      "video": "counting_puzzle",
+      "timestamp": "2:00",
+      "query": "The most unexpected answer to a counting puzzle 3blue1brown"
+    },
+    {
+      "file": "counting_puzzle_t230.mp4",
+      "video": "counting_puzzle",
+      "timestamp": "2:30",
+      "query": "The most unexpected answer to a counting puzzle 3blue1brown"
+    },
+    {
+      "file": "counting_puzzle_t300.mp4",
+      "video": "counting_puzzle",
+      "timestamp": "3:00",
+      "query": "The most unexpected answer to a counting puzzle 3blue1brown"
+    },
+    {
+      "file": "counting_puzzle_t400.mp4",
+      "video": "counting_puzzle",
+      "timestamp": "4:00",
+      "query": "The most unexpected answer to a counting puzzle 3blue1brown"
+    },
+    {
+      "file": "linalg_ch3_t130.mp4",
+      "video": "linalg_ch3",
+      "timestamp": "1:30",
+      "query": "Essence of linear algebra chapter 3 linear transformations matrices 3blue1brown"
+    },
+    {
+      "file": "linalg_ch3_t300.mp4",
+      "video": "linalg_ch3",
+      "timestamp": "3:00",
+      "query": "Essence of linear algebra chapter 3 linear transformations matrices 3blue1brown"
+    },
+    {
+      "file": "linalg_ch3_t500.mp4",
+      "video": "linalg_ch3",
+      "timestamp": "5:00",
+      "query": "Essence of linear algebra chapter 3 linear transformations matrices 3blue1brown"
+    },
+    {
+      "file": "linalg_ch3_t700.mp4",
+      "video": "linalg_ch3",
+      "timestamp": "7:00",
+      "query": "Essence of linear algebra chapter 3 linear transformations matrices 3blue1brown"
+    },
+    {
+      "file": "linalg_ch3_t900.mp4",
+      "video": "linalg_ch3",
+      "timestamp": "9:00",
+      "query": "Essence of linear algebra chapter 3 linear transformations matrices 3blue1brown"
+    },
+    {
+      "file": "linalg_ch4_t130.mp4",
+      "video": "linalg_ch4",
+      "timestamp": "1:30",
+      "query": "Essence of linear algebra chapter 4 matrix multiplication composition 3blue1brown"
+    },
+    {
+      "file": "linalg_ch4_t300.mp4",
+      "video": "linalg_ch4",
+      "timestamp": "3:00",
+      "query": "Essence of linear algebra chapter 4 matrix multiplication composition 3blue1brown"
+    },
+    {
+      "file": "linalg_ch4_t500.mp4",
+      "video": "linalg_ch4",
+      "timestamp": "5:00",
+      "query": "Essence of linear algebra chapter 4 matrix multiplication composition 3blue1brown"
+    },
+    {
+      "file": "linalg_ch4_t700.mp4",
+      "video": "linalg_ch4",
+      "timestamp": "7:00",
+      "query": "Essence of linear algebra chapter 4 matrix multiplication composition 3blue1brown"
+    },
+    {
+      "file": "linalg_ch4_t900.mp4",
+      "video": "linalg_ch4",
+      "timestamp": "9:00",
+      "query": "Essence of linear algebra chapter 4 matrix multiplication composition 3blue1brown"
+    },
+    {
+      "file": "linalg_ch5_t030.mp4",
+      "video": "linalg_ch5",
+      "timestamp": "0:30",
+      "query": "Essence of linear algebra chapter 5 three dimensional linear transformations 3blue1brown"
+    },
+    {
+      "file": "linalg_ch5_t130.mp4",
+      "video": "linalg_ch5",
+      "timestamp": "1:30",
+      "query": "Essence of linear algebra chapter 5 three dimensional linear transformations 3blue1brown"
+    },
+    {
+      "file": "linalg_ch5_t230.mp4",
+      "video": "linalg_ch5",
+      "timestamp": "2:30",
+      "query": "Essence of linear algebra chapter 5 three dimensional linear transformations 3blue1brown"
+    },
+    {
+      "file": "linalg_ch5_t300.mp4",
+      "video": "linalg_ch5",
+      "timestamp": "3:00",
+      "query": "Essence of linear algebra chapter 5 three dimensional linear transformations 3blue1brown"
+    },
+    {
+      "file": "linalg_ch5_t330.mp4",
+      "video": "linalg_ch5",
+      "timestamp": "3:30",
+      "query": "Essence of linear algebra chapter 5 three dimensional linear transformations 3blue1brown"
+    },
+    {
+      "file": "linalg_ch5_t400.mp4",
+      "video": "linalg_ch5",
+      "timestamp": "4:00",
+      "query": "Essence of linear algebra chapter 5 three dimensional linear transformations 3blue1brown"
+    },
+    {
+      "file": "linalg_ch5_t410.mp4",
+      "video": "linalg_ch5",
+      "timestamp": "4:10",
+      "query": "Essence of linear algebra chapter 5 three dimensional linear transformations 3blue1brown"
+    },
+    {
+      "file": "linalg_ch8_t1100.mp4",
+      "video": "linalg_ch8",
+      "timestamp": "11:00",
+      "query": "Essence of linear algebra chapter 8 dot products duality 3blue1brown"
+    },
+    {
+      "file": "linalg_ch8_t130.mp4",
+      "video": "linalg_ch8",
+      "timestamp": "1:30",
+      "query": "Essence of linear algebra chapter 8 dot products duality 3blue1brown"
+    },
+    {
+      "file": "linalg_ch8_t300.mp4",
+      "video": "linalg_ch8",
+      "timestamp": "3:00",
+      "query": "Essence of linear algebra chapter 8 dot products duality 3blue1brown"
+    },
+    {
+      "file": "linalg_ch8_t500.mp4",
+      "video": "linalg_ch8",
+      "timestamp": "5:00",
+      "query": "Essence of linear algebra chapter 8 dot products duality 3blue1brown"
+    },
+    {
+      "file": "linalg_ch8_t700.mp4",
+      "video": "linalg_ch8",
+      "timestamp": "7:00",
+      "query": "Essence of linear algebra chapter 8 dot products duality 3blue1brown"
+    },
+    {
+      "file": "linalg_ch8_t900.mp4",
+      "video": "linalg_ch8",
+      "timestamp": "9:00",
+      "query": "Essence of linear algebra chapter 8 dot products duality 3blue1brown"
+    },
+    {
+      "file": "nn_ch2_t1200.mp4",
+      "video": "nn_ch2",
+      "timestamp": "12:00",
+      "query": "But what is a neural network chapter 2 gradient descent 3blue1brown"
+    },
+    {
+      "file": "nn_ch2_t130.mp4",
+      "video": "nn_ch2",
+      "timestamp": "1:30",
+      "query": "But what is a neural network chapter 2 gradient descent 3blue1brown"
+    },
+    {
+      "file": "nn_ch2_t1700.mp4",
+      "video": "nn_ch2",
+      "timestamp": "17:00",
+      "query": "But what is a neural network chapter 2 gradient descent 3blue1brown"
+    },
+    {
+      "file": "nn_ch2_t300.mp4",
+      "video": "nn_ch2",
+      "timestamp": "3:00",
+      "query": "But what is a neural network chapter 2 gradient descent 3blue1brown"
+    },
+    {
+      "file": "nn_ch2_t400.mp4",
+      "video": "nn_ch2",
+      "timestamp": "4:00",
+      "query": "But what is a neural network chapter 2 gradient descent 3blue1brown"
+    },
+    {
+      "file": "nn_ch2_t500.mp4",
+      "video": "nn_ch2",
+      "timestamp": "5:00",
+      "query": "But what is a neural network chapter 2 gradient descent 3blue1brown"
+    },
+    {
+      "file": "nn_ch2_t700.mp4",
+      "video": "nn_ch2",
+      "timestamp": "7:00",
+      "query": "But what is a neural network chapter 2 gradient descent 3blue1brown"
+    },
+    {
+      "file": "nn_ch2_t900.mp4",
+      "video": "nn_ch2",
+      "timestamp": "9:00",
+      "query": "But what is a neural network chapter 2 gradient descent 3blue1brown"
+    },
+    {
+      "file": "nn_ch3_t1100.mp4",
+      "video": "nn_ch3",
+      "timestamp": "11:00",
+      "query": "neural network chapter 3 backpropagation 3blue1brown"
+    },
+    {
+      "file": "nn_ch3_t130.mp4",
+      "video": "nn_ch3",
+      "timestamp": "1:30",
+      "query": "neural network chapter 3 backpropagation 3blue1brown"
+    },
+    {
+      "file": "nn_ch3_t300.mp4",
+      "video": "nn_ch3",
+      "timestamp": "3:00",
+      "query": "neural network chapter 3 backpropagation 3blue1brown"
+    },
+    {
+      "file": "nn_ch3_t500.mp4",
+      "video": "nn_ch3",
+      "timestamp": "5:00",
+      "query": "neural network chapter 3 backpropagation 3blue1brown"
+    },
+    {
+      "file": "nn_ch3_t700.mp4",
+      "video": "nn_ch3",
+      "timestamp": "7:00",
+      "query": "neural network chapter 3 backpropagation 3blue1brown"
+    },
+    {
+      "file": "nn_ch3_t800.mp4",
+      "video": "nn_ch3",
+      "timestamp": "8:00",
+      "query": "neural network chapter 3 backpropagation 3blue1brown"
+    },
+    {
+      "file": "nn_ch3_t900.mp4",
+      "video": "nn_ch3",
+      "timestamp": "9:00",
+      "query": "neural network chapter 3 backpropagation 3blue1brown"
+    },
+    {
+      "file": "quaternions_t130.mp4",
+      "video": "quaternions",
+      "timestamp": "1:30",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "quaternions_t1400.mp4",
+      "video": "quaternions",
+      "timestamp": "14:00",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "quaternions_t2000.mp4",
+      "video": "quaternions",
+      "timestamp": "20:00",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "quaternions_t2600.mp4",
+      "video": "quaternions",
+      "timestamp": "26:00",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "quaternions_t300.mp4",
+      "video": "quaternions",
+      "timestamp": "3:00",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "quaternions_t500.mp4",
+      "video": "quaternions",
+      "timestamp": "5:00",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "quaternions_t700.mp4",
+      "video": "quaternions",
+      "timestamp": "7:00",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "quaternions_t800.mp4",
+      "video": "quaternions",
+      "timestamp": "8:00",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "quaternions_t900.mp4",
+      "video": "quaternions",
+      "timestamp": "9:00",
+      "query": "Visualizing quaternions 3blue1brown"
+    },
+    {
+      "file": "sphere_area_t1000.mp4",
+      "video": "sphere_area",
+      "timestamp": "10:00",
+      "query": "But why is a sphere surface area four times its shadow 3blue1brown"
+    },
+    {
+      "file": "sphere_area_t130.mp4",
+      "video": "sphere_area",
+      "timestamp": "1:30",
+      "query": "But why is a sphere surface area four times its shadow 3blue1brown"
+    },
+    {
+      "file": "sphere_area_t1300.mp4",
+      "video": "sphere_area",
+      "timestamp": "13:00",
+      "query": "But why is a sphere surface area four times its shadow 3blue1brown"
+    },
+    {
+      "file": "sphere_area_t300.mp4",
+      "video": "sphere_area",
+      "timestamp": "3:00",
+      "query": "But why is a sphere surface area four times its shadow 3blue1brown"
+    },
+    {
+      "file": "sphere_area_t400.mp4",
+      "video": "sphere_area",
+      "timestamp": "4:00",
+      "query": "But why is a sphere surface area four times its shadow 3blue1brown"
+    },
+    {
+      "file": "sphere_area_t500.mp4",
+      "video": "sphere_area",
+      "timestamp": "5:00",
+      "query": "But why is a sphere surface area four times its shadow 3blue1brown"
+    },
+    {
+      "file": "sphere_area_t700.mp4",
+      "video": "sphere_area",
+      "timestamp": "7:00",
+      "query": "But why is a sphere surface area four times its shadow 3blue1brown"
+    },
+    {
+      "file": "sphere_area_t900.mp4",
+      "video": "sphere_area",
+      "timestamp": "9:00",
+      "query": "But why is a sphere surface area four times its shadow 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t1200.mp4",
+      "video": "transformers_p2",
+      "timestamp": "12:00",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t130.mp4",
+      "video": "transformers_p2",
+      "timestamp": "1:30",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t1800.mp4",
+      "video": "transformers_p2",
+      "timestamp": "18:00",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t200.mp4",
+      "video": "transformers_p2",
+      "timestamp": "2:00",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t2300.mp4",
+      "video": "transformers_p2",
+      "timestamp": "23:00",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t300.mp4",
+      "video": "transformers_p2",
+      "timestamp": "3:00",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t500.mp4",
+      "video": "transformers_p2",
+      "timestamp": "5:00",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t700.mp4",
+      "video": "transformers_p2",
+      "timestamp": "7:00",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    },
+    {
+      "file": "transformers_p2_t900.mp4",
+      "video": "transformers_p2",
+      "timestamp": "9:00",
+      "query": "How do transformers work visual intro part 2 3blue1brown"
+    }
+  ]
+}
