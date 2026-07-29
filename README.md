@@ -1,5 +1,8 @@
 # Flue Framework Exploration
 
+> **⚠️ Personal Hobby Project** — This is an independent, personal project by [Alan Blount](https://github.com/zeroasterisk). It is **not affiliated with, endorsed by, or supported by any employer, company, or organization**. No warranty; use at your own risk.
+
+
 > **TL;DR:** Exploring how to deploy [Flue](https://flueframework.com/) agents on Google Cloud — from simple Cloud Run to GEAP (Gemini Enterprise Agent Platform) sandboxes with full governance. Plus making Flue agents A2A-compliant for agent-to-agent communication.
 
 ## Status
