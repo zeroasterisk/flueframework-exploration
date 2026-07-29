@@ -1,0 +1,13 @@
+{
+  "_axis": "narration tone — rhetorical question opening",
+  "_what_we_learn": "Does a question hook increase engagement or feel gimmicky?",
+  "voice": "Charon",
+  "pace": "fast",
+  "beats": [
+    {"id": "start",  "line": "When an AI agent makes a call to your database, who is it, exactly?"},
+    {"id": "issuer", "line": "The platform answers that question before the agent does anything at all. It runs a certificate authority specifically for agent processes."},
+    {"id": "issue",  "line": "At startup — before any user request arrives — the CA signs a short-lived identity for that process and that process alone."},
+    {"id": "carry",  "line": "Every call the agent makes from that point on is attested by that credential."},
+    {"id": "closer", "line": "Not who asked the agent to act. The agent itself."}
+  ]
+}

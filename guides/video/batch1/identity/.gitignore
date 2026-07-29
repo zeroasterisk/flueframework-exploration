@@ -1,0 +1,5 @@
+media/
+corpus_judge/*.mp4
+renders/*.mp4
+narration/*/beats/
+narration/*/narration.wav

@@ -1,0 +1,32 @@
+[
+  {
+    "a": "clip_01.mp4",
+    "b": "clip_02.mp4",
+    "why": "direct vs explanatory narration tone"
+  },
+  {
+    "a": "clip_01.mp4",
+    "b": "clip_03.mp4",
+    "why": "direct vs rhetorical narration tone"
+  },
+  {
+    "a": "clip_01.mp4",
+    "b": "clip_04.mp4",
+    "why": "direct vs contrast narration tone"
+  },
+  {
+    "a": "clip_02.mp4",
+    "b": "clip_03.mp4",
+    "why": "explanatory vs rhetorical narration tone"
+  },
+  {
+    "a": "clip_02.mp4",
+    "b": "clip_04.mp4",
+    "why": "explanatory vs contrast narration tone"
+  },
+  {
+    "a": "clip_03.mp4",
+    "b": "clip_04.mp4",
+    "why": "rhetorical vs contrast narration tone"
+  }
+]

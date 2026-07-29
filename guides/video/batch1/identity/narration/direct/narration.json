@@ -1,0 +1,63 @@
+{
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Charon",
+  "pace": "fast",
+  "breath_s": 0.35,
+  "total_s": 20.83,
+  "speech_s": 19.08,
+  "speech_density": 0.916,
+  "wpm_overall": 191.8,
+  "track": "narration.wav",
+  "beats": [
+    {
+      "id": "start",
+      "line": "An agent process starts up with no credentials of its own.",
+      "words": 11,
+      "audio_s": 3.04,
+      "start_s": 0.0,
+      "end_s": 3.04,
+      "wpm": 217.1,
+      "file": "beats/start.wav"
+    },
+    {
+      "id": "issuer",
+      "line": "The platform runs a certificate authority that can verify what that process actually is.",
+      "words": 14,
+      "audio_s": 4.6,
+      "start_s": 3.39,
+      "end_s": 7.99,
+      "wpm": 182.6,
+      "file": "beats/issuer.wav"
+    },
+    {
+      "id": "issue",
+      "line": "It signs a short-lived identity for the process at startup, before any user request arrives.",
+      "words": 15,
+      "audio_s": 4.72,
+      "start_s": 8.34,
+      "end_s": 13.06,
+      "wpm": 190.7,
+      "file": "beats/issue.wav"
+    },
+    {
+      "id": "carry",
+      "line": "That identity travels with the agent into every call it makes.",
+      "words": 11,
+      "audio_s": 3.36,
+      "start_s": 13.41,
+      "end_s": 16.77,
+      "wpm": 196.4,
+      "file": "beats/carry.wav"
+    },
+    {
+      "id": "closer",
+      "line": "Identity belongs to the process. Not to whoever called it.",
+      "words": 10,
+      "audio_s": 3.36,
+      "start_s": 17.12,
+      "end_s": 20.48,
+      "wpm": 178.6,
+      "file": "beats/closer.wav"
+    }
+  ]
+}

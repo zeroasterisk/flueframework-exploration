@@ -1,0 +1,63 @@
+{
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Charon",
+  "pace": "fast",
+  "breath_s": 0.35,
+  "total_s": 25.87,
+  "speech_s": 24.12,
+  "speech_density": 0.932,
+  "wpm_overall": 209.0,
+  "track": "narration.wav",
+  "beats": [
+    {
+      "id": "start",
+      "line": "When an agent process starts, it has no way to prove what it is.",
+      "words": 14,
+      "audio_s": 3.68,
+      "start_s": 0.0,
+      "end_s": 3.68,
+      "wpm": 228.3,
+      "file": "beats/start.wav"
+    },
+    {
+      "id": "issuer",
+      "line": "To fix that, the platform runs a workload certificate authority \u2014 an independent source of truth about process identity.",
+      "words": 19,
+      "audio_s": 5.72,
+      "start_s": 4.03,
+      "end_s": 9.75,
+      "wpm": 199.3,
+      "file": "beats/issuer.wav"
+    },
+    {
+      "id": "issue",
+      "line": "Before the first user request ever arrives, the CA signs a short-lived credential for that specific process.",
+      "words": 17,
+      "audio_s": 5.56,
+      "start_s": 10.1,
+      "end_s": 15.66,
+      "wpm": 183.5,
+      "file": "beats/issue.wav"
+    },
+    {
+      "id": "carry",
+      "line": "From that point on, every downstream call the agent makes carries that credential as proof of who it is.",
+      "words": 19,
+      "audio_s": 4.72,
+      "start_s": 16.01,
+      "end_s": 20.73,
+      "wpm": 241.5,
+      "file": "beats/carry.wav"
+    },
+    {
+      "id": "closer",
+      "line": "This matters because it separates the agent's identity from the identity of whoever triggered it.",
+      "words": 15,
+      "audio_s": 4.44,
+      "start_s": 21.08,
+      "end_s": 25.52,
+      "wpm": 202.7,
+      "file": "beats/closer.wav"
+    }
+  ]
+}

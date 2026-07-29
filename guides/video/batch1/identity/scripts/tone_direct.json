@@ -1,0 +1,13 @@
+{
+  "_axis": "narration tone — direct",
+  "_what_we_learn": "Does a declarative matter-of-fact tone work for this audience?",
+  "voice": "Charon",
+  "pace": "fast",
+  "beats": [
+    {"id": "start",  "line": "An agent process starts up with no credentials of its own."},
+    {"id": "issuer", "line": "The platform runs a certificate authority that can verify what that process actually is."},
+    {"id": "issue",  "line": "It signs a short-lived identity for the process at startup, before any user request arrives."},
+    {"id": "carry",  "line": "That identity travels with the agent into every call it makes."},
+    {"id": "closer", "line": "Identity belongs to the process. Not to whoever called it."}
+  ]
+}

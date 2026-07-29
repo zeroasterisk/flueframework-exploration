@@ -1,0 +1,13 @@
+{
+  "_axis": "narration tone — explanatory (explains the why)",
+  "_what_we_learn": "Does adding 'why it matters' improve or clutter the beat?",
+  "voice": "Charon",
+  "pace": "fast",
+  "beats": [
+    {"id": "start",  "line": "When an agent process starts, it has no way to prove what it is."},
+    {"id": "issuer", "line": "To fix that, the platform runs a workload certificate authority — an independent source of truth about process identity."},
+    {"id": "issue",  "line": "Before the first user request ever arrives, the CA signs a short-lived credential for that specific process."},
+    {"id": "carry",  "line": "From that point on, every downstream call the agent makes carries that credential as proof of who it is."},
+    {"id": "closer", "line": "This matters because it separates the agent's identity from the identity of whoever triggered it."}
+  ]
+}

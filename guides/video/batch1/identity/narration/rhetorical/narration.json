@@ -1,0 +1,63 @@
+{
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Charon",
+  "pace": "fast",
+  "breath_s": 0.35,
+  "total_s": 25.59,
+  "speech_s": 23.84,
+  "speech_density": 0.932,
+  "wpm_overall": 203.9,
+  "track": "narration.wav",
+  "beats": [
+    {
+      "id": "start",
+      "line": "When an AI agent makes a call to your database, who is it, exactly?",
+      "words": 14,
+      "audio_s": 3.6,
+      "start_s": 0.0,
+      "end_s": 3.6,
+      "wpm": 233.3,
+      "file": "beats/start.wav"
+    },
+    {
+      "id": "issuer",
+      "line": "The platform answers that question before the agent does anything at all. It runs a certificate authority specifically for agent processes.",
+      "words": 21,
+      "audio_s": 6.68,
+      "start_s": 3.95,
+      "end_s": 10.63,
+      "wpm": 188.6,
+      "file": "beats/issuer.wav"
+    },
+    {
+      "id": "issue",
+      "line": "At startup \u2014 before any user request arrives \u2014 the CA signs a short-lived identity for that process and that process alone.",
+      "words": 22,
+      "audio_s": 6.8,
+      "start_s": 10.98,
+      "end_s": 17.78,
+      "wpm": 194.1,
+      "file": "beats/issue.wav"
+    },
+    {
+      "id": "carry",
+      "line": "Every call the agent makes from that point on is attested by that credential.",
+      "words": 14,
+      "audio_s": 3.52,
+      "start_s": 18.13,
+      "end_s": 21.65,
+      "wpm": 238.6,
+      "file": "beats/carry.wav"
+    },
+    {
+      "id": "closer",
+      "line": "Not who asked the agent to act. The agent itself.",
+      "words": 10,
+      "audio_s": 3.24,
+      "start_s": 22.0,
+      "end_s": 25.24,
+      "wpm": 185.2,
+      "file": "beats/closer.wav"
+    }
+  ]
+}

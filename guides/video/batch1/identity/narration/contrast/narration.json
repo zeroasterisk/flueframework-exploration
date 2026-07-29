@@ -1,0 +1,63 @@
+{
+  "model": "gemini-3.1-flash-tts-preview",
+  "voice": "Charon",
+  "pace": "fast",
+  "breath_s": 0.35,
+  "total_s": 28.51,
+  "speech_s": 26.76,
+  "speech_density": 0.939,
+  "wpm_overall": 186.1,
+  "track": "narration.wav",
+  "beats": [
+    {
+      "id": "start",
+      "line": "Traditionally, identity was tied to the human making a request. Agents break that model.",
+      "words": 14,
+      "audio_s": 5.04,
+      "start_s": 0.0,
+      "end_s": 5.04,
+      "wpm": 166.7,
+      "file": "beats/start.wav"
+    },
+    {
+      "id": "issuer",
+      "line": "An agent process needs its own identity \u2014 one it holds independently of any user. The platform provides a workload certificate authority for exactly this.",
+      "words": 25,
+      "audio_s": 7.4,
+      "start_s": 5.39,
+      "end_s": 12.79,
+      "wpm": 202.7,
+      "file": "beats/issuer.wav"
+    },
+    {
+      "id": "issue",
+      "line": "At process startup, the CA issues a short-lived credential. This happens before any request, from any user, arrives.",
+      "words": 18,
+      "audio_s": 5.92,
+      "start_s": 13.14,
+      "end_s": 19.06,
+      "wpm": 182.4,
+      "file": "beats/issue.wav"
+    },
+    {
+      "id": "carry",
+      "line": "That credential now follows the agent into every outbound call it makes.",
+      "words": 12,
+      "audio_s": 3.64,
+      "start_s": 19.41,
+      "end_s": 23.05,
+      "wpm": 197.8,
+      "file": "beats/carry.wav"
+    },
+    {
+      "id": "closer",
+      "line": "The agent's identity and the caller's identity are separate things, tracked separately, audited separately.",
+      "words": 14,
+      "audio_s": 4.76,
+      "start_s": 23.4,
+      "end_s": 28.16,
+      "wpm": 176.5,
+      "file": "beats/closer.wav"
+    }
+  ]
+}

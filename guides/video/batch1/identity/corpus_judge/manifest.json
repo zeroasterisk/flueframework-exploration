@@ -1,0 +1,20 @@
+{
+  "clips": [
+    {
+      "id": "direct",
+      "file": "clip_01.mp4"
+    },
+    {
+      "id": "explanatory",
+      "file": "clip_02.mp4"
+    },
+    {
+      "id": "rhetorical",
+      "file": "clip_03.mp4"
+    },
+    {
+      "id": "contrast",
+      "file": "clip_04.mp4"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_axis": "narration tone — contrast (old way vs new way)",
+  "_what_we_learn": "Does the before/after framing help or add unnecessary length?",
+  "voice": "Charon",
+  "pace": "fast",
+  "beats": [
+    {"id": "start",  "line": "Traditionally, identity was tied to the human making a request. Agents break that model."},
+    {"id": "issuer", "line": "An agent process needs its own identity — one it holds independently of any user. The platform provides a workload certificate authority for exactly this."},
+    {"id": "issue",  "line": "At process startup, the CA issues a short-lived credential. This happens before any request, from any user, arrives."},
+    {"id": "carry",  "line": "That credential now follows the agent into every outbound call it makes."},
+    {"id": "closer", "line": "The agent's identity and the caller's identity are separate things, tracked separately, audited separately."}
+  ]
+}
